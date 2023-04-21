@@ -12,6 +12,23 @@ type RegisterUserProps = {
   confirm_password: string;
 };
 
+const initialValues: RegisterUserProps = {
+  // name: '',
+  email: '',
+  password: '',
+  confirm_password: '',
+};
+
+const validationSchema = Yup.object().shape({
+  name: Yup.string().required('Full name is required'),
+  email: Yup.string().email('Invalid email').required('Email is required'),
+  password: Yup.string()
+    .min(6, 'Password must be at least 6 characters')
+    .required('Password is required'),
+  confirm_password: Yup.string()
+    .oneOf([Yup.ref('password'), ''], 'Passwords must match')
+    .required('Confirmation is required'),
+});
 
 const Register = () => {
   const onSubmit = (values: RegisterUserProps) => {
