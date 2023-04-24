@@ -5,3 +5,8 @@ section.home {
 section.home h1 {
   @apply text-4xl font-bold;
 }
+
+
+#root > div > div > form > div.MuiBox-root.css-1bntj9o > label > span.MuiButtonBase-root.MuiCheckbox-root.MuiCheckbox-colorPrimary.PrivateSwitchBase-root.MuiCheckbox-root.MuiCheckbox-colorPrimary.Mui-checked.MuiCheckbox-root.MuiCheckbox-colorPrimary.css-12wnr2w-MuiButtonBase-root-MuiCheckbox-root {
+  color: #4CBB17 !important;
+}
