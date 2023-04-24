@@ -1,0 +1,24 @@
+.authIconContainer {
+  display: flex;
+  justify-content: space-between;
+  
+}
+
+.authBtnIcons {
+  border: 1px solid #ccc !important;
+  padding: 1vh 2.2rem !important;
+  border-radius: 5px !important;
+  /* margin-right: 10px !important; */
+}
+
+.authIcons {
+  font-size: 2rem !important;
+}
+
+.authIconFb {
+  color: #139EF8 !important;
+}
+
+.authIconTw {
+  color: #1C9BEF !important;
+}
