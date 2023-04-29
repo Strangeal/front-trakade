@@ -16,10 +16,14 @@ import { useAppDispatch } from "../../helpers/useRedux";
 import { loginUser } from "../../redux/authen/authSlice";
 import { useSelector } from "react-redux";
 import { useForm } from "react-hook-form";
-
+import handleToastr from "../../helpers/handleToastr";
+import { DevTool } from "@hookform/devtools";
+import { LoginSocialFacebook } from "reactjs-social-login";
+// import { FacebookLoginButton } from "reactjs-social-login"
 type LoginValueProp = {
   email: string;
   password: string;
+  remember: boolean;
 };
 
 // [theme.breakpoints.up("sm")]: {}
@@ -32,6 +36,7 @@ const Login = () => {
   const {
     register,
     handleSubmit,
+    control,
     formState: { errors },
   } = form;
 
@@ -40,13 +45,16 @@ const Login = () => {
     dispatch(loginUser(data)).then((res) => {
       console.log(res);
       if (res.meta.requestStatus === "fulfilled") {
-        console.log("Logged in successfully");
+        const message = "Logged in successfully😊";
+        const icon = "success";
+        handleToastr(message, icon);
         navigate("/");
-      } else {
-        validateMessage = "Invalid email or password";
       }
-      // if (status === 200) {
-      // }
+      if (res.meta.requestStatus === "rejected") {
+        const message = "Invalid emal or password🥺";
+        const icon = "error";
+        handleToastr(message, icon);
+      }
     });
   };
 
@@ -75,7 +83,6 @@ const Login = () => {
             justifyContent: "center",
             alignItems: "center",
             height: "100vh",
-            // [theme.breakpoints.up("sm")]: { bgcolor: "" },
           }}
         >
           <Box sx={{ mx: 2 }}>
@@ -101,9 +108,6 @@ const Login = () => {
                 error={!!errors.email}
                 helperText={errors.email?.message}
               />
-              {/* <Typography sx={{ color: "#FF0000" }}>
-                {errors.email?.message}
-              </Typography> */}
               <TextField
                 sx={{ my: 1.3 }}
                 fullWidth
@@ -113,9 +117,6 @@ const Login = () => {
                 error={!!errors.password}
                 helperText={errors.password?.message}
               />
-              {/* <Typography sx={{ color: "#FF0000" }}>
-                {errors.password?.message}
-              </Typography> */}
               <Box
                 sx={{
                   display: "flex",
@@ -124,7 +125,10 @@ const Login = () => {
                   width: "100%",
                 }}
               >
-                <FormControlLabel control={<Checkbox />} label="Remember me" />
+                <FormControlLabel
+                  control={<Checkbox {...register("remember")} />}
+                  label="Remember me"
+                />
                 <Typography sx={{ color: "#4CBB17" }}>
                   <Link to="">Forgot password?</Link>
                 </Typography>
@@ -143,6 +147,7 @@ const Login = () => {
                   <Link to=""> Get started</Link>
                 </Typography>
               </Typography>
+              <DevTool control={control} />
             </Box>
           </Box>
         </Grid>
