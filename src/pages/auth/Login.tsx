@@ -65,10 +65,19 @@ const Login = () => {
           item
           xs={12}
           md={5}
-          lg={4}
-          sx={{ [theme.breakpoints.up("md")]: { bgcolor: "#00FFFF" } }}
+          lg={3}
+          sx={{
+            [theme.breakpoints.up("md")]: {
+              boxShadow: 3,
+              borderRadius: 4,
+              my: 3,
+              ml: 5,
+            },
+          }}
         >
-          Brand logo
+          <Typography variant="h3" sx={{ textAlign: "center" }}>
+            Brand logo
+          </Typography>
           <Box sx={{ [theme.breakpoints.down("md")]: { display: "none" } }}>
             <img src="https://res.cloudinary.com/dxsom7jmx/image/upload/v1682044390/Trakade/Authen/3d-girl-character_cxpgxz.png" />
           </Box>
@@ -76,7 +85,7 @@ const Login = () => {
         <Grid
           item
           xs={12}
-          md={7}
+          md={6}
           lg={8}
           sx={{
             display: "flex",
