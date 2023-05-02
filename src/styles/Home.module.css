@@ -1,12 +1,24 @@
 section.home {
-  @apply w-full h-screen flex flex-col items-center justify-center;
+  @apply w-full relative;
 }
 
-section.home h1 {
+section.sidebar {
+  @apply fixed w-[15rem] h-screen border;
+}
+
+div.top-nav {
+  @apply border p-4;
+}
+
+div.main-content {
+  @apply ml-[15rem] p-4 relative;
+}
+
+/* section.home h1 {
   @apply text-4xl font-bold;
 }
 
 
 #root > div > div > form > div.MuiBox-root.css-1bntj9o > label > span.MuiButtonBase-root.MuiCheckbox-root.MuiCheckbox-colorPrimary.PrivateSwitchBase-root.MuiCheckbox-root.MuiCheckbox-colorPrimary.Mui-checked.MuiCheckbox-root.MuiCheckbox-colorPrimary.css-12wnr2w-MuiButtonBase-root-MuiCheckbox-root {
   color: #4CBB17 !important;
-}
+} */
