@@ -29,10 +29,6 @@ function createData(
 const rows = [
   createData("Frozen yoghurt", 0, 159, 6, 24, 4),
   createData("Ice cream sandwich", 0, 237, 9, 37, 4),
-  createData("Eclair", 0, 262, 16, 24, 6),
-  createData("Cupcake", 0, 305, 3, 67, 4),
-  createData("Gingerbread", 0, 356, 16, 49, 3),
-  createData("Pancake", 0, 356, 16, 49, 3),
 ];
 const SalesOrder = (props: Props) => {
   return (
