@@ -17,8 +17,8 @@ const CategorySummary = () => {
         <CategoryCard />
         <CategoryCard />
         <CategoryCard />
-        <CategoryCard />
-        <div className="bg-[#6ebcb7] text-white flex flex-col justify-between gap-y-4 p-4 w-[9rem] h-[10rem] rounded-3xl shadow-xl">
+        {/* <CategoryCard /> */}
+        <div className="absolute -right-[6rem] bg-[#6ebcb7] text-white flex flex-col justify-between gap-y-4 p-4 w-[9rem] h-[10rem] rounded-3xl shadow-xl">
           <h1 className="font-bold uppercase">
             Full <br /> Stats
           </h1>

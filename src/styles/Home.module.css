@@ -2,14 +2,14 @@ section.home {
   @apply w-full relative flex;
 }
 
-section.sidebar {
-  @apply fixed w-[15rem] h-screen border bg-[#f2eae0];
-}
+/* section.sidebar {
+  @apply fixed z-[999] w-[15rem] h-screen border bg-[#f2eae0];
+} */
 
 div.top-nav {
-  @apply border p-4 mb-10;
+  @apply border w-full p-4 mb-10;
 }
 
 div.main-content {
-  @apply ml-[15rem] p-4 relative;
+  @apply w-full  p-4 relative;
 }

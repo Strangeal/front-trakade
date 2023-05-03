@@ -8,18 +8,25 @@ html,
 body {
   font-family: 'Nunito', sans-serif;
 }
+
+.css-1wvake5 {
+  width: initial;
+  min-width: none;
+}
+
 .ps-menuitem-root {
   padding: 0 20px !important;
 }
+
 .ps-menu-button {
   padding: 0 20px !important;
-  color: #888B92 !important;
+  color: #888b92 !important;
   font-size: 0.96rem;
   font-weight: 500;
 }
 
 .ps-menu-button:hover {
-  background-color: #E8F5F4 !important;
+  background-color: #e8f5f4 !important;
   border-radius: 8px;
-  color: #14C8AB !important;
+  color: #14c8ab !important;
 }
