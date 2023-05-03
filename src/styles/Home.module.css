@@ -7,7 +7,7 @@ section.sidebar {
 }
 
 div.top-nav {
-  @apply border p-4;
+  @apply border p-4 mb-10;
 }
 
 div.main-content {
