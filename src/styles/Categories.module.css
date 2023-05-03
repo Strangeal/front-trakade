@@ -1,5 +1,5 @@
 section.cat_container {
-  @apply flex items-center gap-x-10 bg-[#e9f5f4] p-10 rounded-3xl;
+  @apply flex items-center gap-x-10 bg-[#e9f5f4] p-10 rounded-3xl my-6;
 }
 
 div.cat_card {
