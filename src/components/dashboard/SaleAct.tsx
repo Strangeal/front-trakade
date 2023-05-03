@@ -1,5 +1,5 @@
-import CheckIcon from '@mui/icons-material/Check';
-import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight';
+import CheckIcon from "@mui/icons-material/Check";
+import KeyboardArrowRightIcon from "@mui/icons-material/KeyboardArrowRight";
 import {
   Avatar,
   Box,
@@ -7,19 +7,23 @@ import {
   Grid,
   IconButton,
   Typography,
-} from '@mui/material';
-import useMediaQuery from '@mui/material/useMediaQuery';
-import theme from '../Theme';
-import InventSummary from './InventSummary';
+} from "@mui/material";
+import useMediaQuery from "@mui/material/useMediaQuery";
+import theme from "../Theme";
+import InventSummary from "./InventSummary";
 
 type Props = {};
 
 const SaleAct = (props: Props) => {
-  const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
-  const isTable = useMediaQuery(theme.breakpoints.down('md'));
-  const isTableUp = useMediaQuery(theme.breakpoints.up('md'));
+  const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
+  const isTable = useMediaQuery(theme.breakpoints.down("md"));
+  const isTableUp = useMediaQuery(theme.breakpoints.up("md"));
   return (
-    <Grid container spacing={2} sx={{ bgcolor: '#F5FAFE', pr: 2 }}>
+    <Grid
+      container
+      spacing={2}
+      sx={{ bgcolor: "#F5FAFE", width: "100%", mx: 0 }}
+    >
       <Grid item xs={12} md={7} lg={8} sx={{ mr: 3, pb: 4 }}>
         <Typography variant="h6" sx={{ mb: 3 }}>
           Sales Activity
@@ -29,22 +33,21 @@ const SaleAct = (props: Props) => {
           <Grid item zeroMinWidth xs={12} md={6} lg={3}>
             <Box
               sx={{
-                display: 'flex',
-                alignItems: 'center',
+                display: "flex",
+                alignItems: "center",
                 boxShadow: 2,
                 borderRadius: 2,
-                bgcolor: '#FFFFFF',
+                bgcolor: "#FFFFFF",
                 p: 2,
-                [theme.breakpoints.up('md')]: {
-                  flexDirection: 'column',
-                  // px: 3,
+                [theme.breakpoints.up("md")]: {
+                  flexDirection: "column",
                 },
               }}
             >
               <div>
                 {isTable ? (
                   <Avatar
-                    sx={{ bgcolor: '#FF5733' }}
+                    sx={{ bgcolor: "#FF5733" }}
                     aria-label="sales activity logo"
                   >
                     R
@@ -58,41 +61,41 @@ const SaleAct = (props: Props) => {
 
               <Box
                 sx={{
-                  display: 'flex',
-                  justifyContent: 'space-between',
-                  alignItems: 'center',
-                  width: '100%',
-                  [theme.breakpoints.up('md')]: {
-                    flexDirection: 'row-reverse',
-                    alignItems: 'flex-end',
-                    width: 'auto',
+                  display: "flex",
+                  justifyContent: "space-between",
+                  alignItems: "center",
+                  width: "100%",
+                  [theme.breakpoints.up("md")]: {
+                    flexDirection: "row-reverse",
+                    alignItems: "flex-end",
+                    width: "auto",
                   },
                 }}
               >
                 <Box
-                  sx={{ ml: 3, [theme.breakpoints.up('md')]: { ml: 0 } }}
+                  sx={{ ml: 3, [theme.breakpoints.up("md")]: { ml: 0 } }}
                   className="card-content"
                 >
                   <Typography
                     variant="h6"
                     sx={{
-                      [theme.breakpoints.up('md')]: {
-                        textAlign: 'end',
+                      [theme.breakpoints.up("md")]: {
+                        textAlign: "end",
                         mr: 5.5,
                         mb: 1.5,
-                        fontSize: '10px',
+                        fontSize: "10px",
                       },
                     }}
                   >
-                    {isTable ? 5 : 'Qty'}
+                    {isTable ? 5 : "Qty"}
                   </Typography>
                   <Typography
                     sx={{
-                      fontSize: '0.875rem',
-                      color: '#00000099',
-                      [theme.breakpoints.up('md')]: {
-                        fontSize: '0.675rem',
-                        textTransform: 'uppercase',
+                      fontSize: "0.875rem",
+                      color: "#00000099",
+                      [theme.breakpoints.up("md")]: {
+                        fontSize: "0.675rem",
+                        textTransform: "uppercase",
                       },
                     }}
                   >
@@ -123,11 +126,11 @@ const SaleAct = (props: Props) => {
           orientation="vertical"
           sx={{
             borderWidth: 1,
-            height: 'inherit',
+            height: "inherit",
           }}
         />
       ) : (
-        ''
+        ""
       )}
       <Grid item xs={12} md={4} lg={3.5} sx={{ pb: 4 }}>
         <InventSummary />
