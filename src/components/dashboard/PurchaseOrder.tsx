@@ -18,7 +18,7 @@ type Props = {};
 const PurchaseOrder = (props: Props) => {
   return (
     <TableContainer>
-      <Table>
+      <Table sx={{ border: 1, borderColor: "#e0e0e0" }}>
         <TableHead>
           <TableRow>
             <TableCell
@@ -27,7 +27,7 @@ const PurchaseOrder = (props: Props) => {
             >
               Sales Order
             </TableCell>
-            <TableCell sx={{}} align="right" colSpan={3}>
+            <TableCell align="right" colSpan={3}>
               <Box
                 sx={{
                   display: "flex",
