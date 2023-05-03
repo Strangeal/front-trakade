@@ -3,9 +3,11 @@ import ReactDOM from 'react-dom/client';
 import { Provider } from 'react-redux';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import App from './App';
+import { AllCategories } from './components/categories';
 import './index.css';
 import Login from './pages/auth/Login';
 import Register from './pages/auth/Register';
+import Dashboard from './pages/dashboard/Dashboard';
 import Home from './pages/dashboard/Home';
 import store from './redux/store';
 
@@ -16,15 +18,26 @@ const router = createBrowserRouter([
     children: [
       {
         index: true,
-        element: <Home />,
+        path: '/',
+        element: <Login />,
       },
       {
         path: '/register',
         element: <Register />,
       },
       {
-        path: '/login',
-        element: <Login />,
+        path: '/dashboard',
+        element: <Home />,
+        children: [
+          {
+            index: true,
+            element: <Dashboard />,
+          },
+          {
+            path: 'categories',
+            element: <AllCategories />,
+          },
+        ],
       },
     ],
   },
