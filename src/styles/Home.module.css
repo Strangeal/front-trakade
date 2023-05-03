@@ -1,5 +1,5 @@
 section.home {
-  @apply w-full relative;
+  @apply w-full relative flex;
 }
 
 section.sidebar {
