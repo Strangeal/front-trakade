@@ -1,5 +1,6 @@
 import { SideBar, TopNavigation } from "../../components/dashboard";
 import SaleAct from "../../components/dashboard/SaleAct";
+import SalesOrder from "../../components/dashboard/SalesOrder";
 import styles from "../../styles/Home.module.css";
 
 const Home = () => {
@@ -12,6 +13,7 @@ const Home = () => {
 
         <div className="my-8">
           <SaleAct />
+          <SalesOrder />
         </div>
       </div>
     </section>
