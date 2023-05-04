@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom/client';
 import { Provider } from 'react-redux';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import App from './App';
-import { AllCategories } from './components/categories';
+import { AllCategories } from './components/stocks';
 import './index.css';
 import Login from './pages/auth/Login';
 import Register from './pages/auth/Register';

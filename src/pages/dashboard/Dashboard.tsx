@@ -1,13 +1,13 @@
-import { CategorySummary } from '../../components/categories';
 import SaleAct from '../../components/dashboard/SaleAct';
 import SalesOrder from '../../components/dashboard/SalesOrder';
+import { StockSummary } from '../../components/stocks';
 
 const Dashboard = () => {
   return (
     <>
       <SaleAct />
 
-      <CategorySummary />
+      <StockSummary />
       <SalesOrder />
     </>
   );

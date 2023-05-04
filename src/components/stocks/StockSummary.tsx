@@ -1,11 +1,9 @@
 import { useState } from 'react';
 import { default as ReactApexChart } from 'react-apexcharts';
-import { IoIosArrowForward } from 'react-icons/io';
-import { Link } from 'react-router-dom';
 import styles from '../../styles/Categories.module.css';
-import CategoryCard from './CategoryCard';
+import StockLevels from './StockLevels';
 
-const CategorySummary = () => {
+const StockSummary = () => {
   const options = {
     series: [
       {
@@ -71,6 +69,9 @@ const CategorySummary = () => {
 
   return (
     <section className={styles.cat_container}>
+      <div className="">
+        <StockLevels />
+      </div>
       <div className={styles.cat_summary}>
         <ReactApexChart
           options={options.options}
@@ -79,11 +80,8 @@ const CategorySummary = () => {
           height={350}
         />
       </div>
-      <div className="border">
-        <p>Another chart goes here...</p>
-      </div>
     </section>
   );
 };
 
-export default CategorySummary;
+export default StockSummary;
