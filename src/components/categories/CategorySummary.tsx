@@ -1,36 +1,86 @@
+import { useState } from 'react';
+import { default as ReactApexChart } from 'react-apexcharts';
 import { IoIosArrowForward } from 'react-icons/io';
 import { Link } from 'react-router-dom';
 import styles from '../../styles/Categories.module.css';
 import CategoryCard from './CategoryCard';
 
 const CategorySummary = () => {
+  const options = {
+    series: [
+      {
+        data: [21200, 29042, 36110, 27185, 15169, 25410, 18933, 30809],
+      },
+    ],
+    options: {
+      title: {
+        text: 'Category Summary',
+        style: {
+          fontFamily: 'Nunito',
+          fontSize: '18px',
+        },
+      },
+      chart: {
+        height: 350,
+        type: 'bar',
+        background: '#e9f5f4',
+      },
+      plotOptions: {
+        bar: {
+          columnWidth: '50%',
+          distributed: true,
+        },
+      },
+      dataLabels: {
+        enabled: false,
+      },
+      legend: {
+        show: false,
+      },
+      xaxis: {
+        categories: [
+          ['Fruits'],
+          ['Vegetables'],
+          ['Drinks'],
+          'Toiletries',
+          ['Furniture'],
+          ['Pastries'],
+          ['Skin', 'Care'],
+          ['Electronics'],
+        ],
+        labels: {
+          style: {
+            // colors: colors,
+            fontSize: '12px',
+          },
+        },
+        title: {
+          text: 'Category',
+        },
+      },
+      yaxis: {
+        show: true,
+        showAlways: true,
+        title: {
+          text: 'Quantity',
+          offsetX: -5,
+        },
+      },
+    },
+  };
+
   return (
     <section className={styles.cat_container}>
-      <div>
-        <h1 className="font-bold text-2xl">Categories</h1>
-        <p className="leading-5 font-light">
-          View all your categories <br /> statistics here
-        </p>
+      <div className={styles.cat_summary}>
+        <ReactApexChart
+          options={options.options}
+          series={options.series}
+          type="bar"
+          height={350}
+        />
       </div>
-
-      <div className="flex gap-x-10">
-        <CategoryCard />
-        <CategoryCard />
-        <CategoryCard />
-        {/* <CategoryCard /> */}
-        <div className="absolute -right-[6rem] bg-[#6ebcb7] text-white flex flex-col justify-between gap-y-4 p-4 w-[9rem] h-[10rem] rounded-3xl shadow-xl">
-          <h1 className="font-bold uppercase">
-            Full <br /> Stats
-          </h1>
-          <Link
-            to={'/dashboard/categories'}
-            className="bg-white p-3 rounded-full w-8 h-8 text-[#6ebcb7] flex justify-center items-center text-xl hover:shadow-sm hover:shadow-slate-800 transition-all duration-300 ease-in-out"
-          >
-            <span>
-              <IoIosArrowForward />
-            </span>
-          </Link>
-        </div>
+      <div className="border">
+        <p>Another chart goes here...</p>
       </div>
     </section>
   );
