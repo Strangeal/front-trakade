@@ -30,7 +30,7 @@ const SideBar = () => {
         [`.${sidebarClasses.container}`]: {
           backgroundColor: 'white',
           height: '100vh',
-          width: '15rem',
+          width: '15.5rem',
           position: 'fixed',
           zIndex: 100,
         },
