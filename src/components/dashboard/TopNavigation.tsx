@@ -28,6 +28,11 @@ const TopNavigation = () => {
               Search for a transaction, item, etc
             </p>
           </button>
+          <button type="button" title="setting">
+            <span>
+              <GrSettingsOption className="fill-gray-600 text-2xl" />
+            </span>
+          </button>
     </div>
   );
 };
