@@ -17,7 +17,7 @@ const PurchaseOverview = (props: Props) => {
         item
         xs={12}
         md={5.9}
-        sx={{ pt: 1, borderRadius: 2 }}
+        sx={{ pt: 1, borderRadius: 2, bgcolor: "#fff" }}
         className={styles.sales_grid}
       >
         <div className={styles.header_container}>

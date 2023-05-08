@@ -1,12 +1,12 @@
-import { Button } from 'primereact/button';
-import { Column } from 'primereact/column';
-import { DataTable } from 'primereact/datatable';
+import { Button } from "primereact/button";
+import { Column } from "primereact/column";
+import { DataTable } from "primereact/datatable";
 
 const StockLevels = () => {
   const columns = [
-    { field: 'name', header: 'Name' },
-    { field: 'category', header: 'Category' },
-    { field: 'quantity', header: 'Quantity' },
+    { field: "name", header: "Name" },
+    { field: "category", header: "Category" },
+    { field: "quantity", header: "Quantity" },
   ];
 
   const header = (
@@ -18,29 +18,29 @@ const StockLevels = () => {
 
   const items = [
     {
-      name: 'Orange',
+      name: "Orange",
       quantity: 50,
-      category: 'Fruits',
+      category: "Fruits",
     },
     {
-      name: 'Laptops',
+      name: "Laptops",
       quantity: 120,
-      category: 'Electronics',
+      category: "Electronics",
     },
     {
-      name: 'Cabbages',
+      name: "Cabbages",
       quantity: 320,
-      category: 'Vegetables',
+      category: "Vegetables",
     },
     {
-      name: 'Laptops',
+      name: "Laptops",
       quantity: 120,
-      category: 'Electronics',
+      category: "Electronics",
     },
     {
-      name: 'Cabbages',
+      name: "Cabbages",
       quantity: 320,
-      category: 'Vegetables',
+      category: "Vegetables",
     },
   ];
 

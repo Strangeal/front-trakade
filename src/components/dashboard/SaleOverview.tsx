@@ -20,12 +20,12 @@ import { salesOverviews } from "../../helpers/dummyData";
 const SaleOverview = () => {
   return (
     <>
-      <Grid container spacing={4} sx={{ width: "100%", mx: 0, my: 2, gap: 2 }}>
+      <Grid container spacing={4} sx={{ width: "100%", mx: 0, mb: 2, gap: 4 }}>
         <Grid
           item
           xs={12}
-          md={5.9}
-          sx={{ pt: 1, borderRadius: 2 }}
+          md={5.7}
+          sx={{ pt: 1, borderRadius: 2, bgcolor: "#fff" }}
           className={styles.sales_grid}
         >
           <div className={styles.header_container}>

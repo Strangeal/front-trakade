@@ -1,7 +1,7 @@
-import { useState } from 'react';
-import { default as ReactApexChart } from 'react-apexcharts';
-import styles from '../../styles/Categories.module.css';
-import StockLevels from './StockLevels';
+import { useState } from "react";
+import { default as ReactApexChart } from "react-apexcharts";
+import styles from "../../styles/Categories.module.css";
+import StockLevels from "./StockLevels";
 
 const StockSummary = () => {
   const options = {
@@ -12,20 +12,20 @@ const StockSummary = () => {
     ],
     options: {
       title: {
-        text: 'Category Summary',
+        text: "Category Summary",
         style: {
-          fontFamily: 'Nunito',
-          fontSize: '18px',
+          fontFamily: "Nunito",
+          fontSize: "18px",
         },
       },
       chart: {
         height: 350,
-        type: 'bar',
-        background: '#e9f5f4',
+        type: "bar",
+        background: "#e9f5f4",
       },
       plotOptions: {
         bar: {
-          columnWidth: '50%',
+          columnWidth: "50%",
           distributed: true,
         },
       },
@@ -37,30 +37,30 @@ const StockSummary = () => {
       },
       xaxis: {
         categories: [
-          ['Fruits'],
-          ['Vegetables'],
-          ['Drinks'],
-          'Toiletries',
-          ['Furniture'],
-          ['Pastries'],
-          ['Skin', 'Care'],
-          ['Electronics'],
+          ["Fruits"],
+          ["Vegetables"],
+          ["Drinks"],
+          "Toiletries",
+          ["Furniture"],
+          ["Pastries"],
+          ["Skin", "Care"],
+          ["Electronics"],
         ],
         labels: {
           style: {
             // colors: colors,
-            fontSize: '12px',
+            fontSize: "12px",
           },
         },
         title: {
-          text: 'Category',
+          text: "Category",
         },
       },
       yaxis: {
         show: true,
         showAlways: true,
         title: {
-          text: 'Quantity',
+          text: "Quantity",
           offsetX: -5,
         },
       },

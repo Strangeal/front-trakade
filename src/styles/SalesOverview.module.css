@@ -1,6 +1,7 @@
 .sales_grid {
-  box-shadow: 0 0 5px rgba(156, 153, 153, 0.6);
-  padding: 10px 20px  !important
+  /* box-shadow: 0 5.5px 15px 1px #dddddd; */
+@apply shadow-md;
+    padding: 10px 20px  !important
 }
 
 .header_container {
