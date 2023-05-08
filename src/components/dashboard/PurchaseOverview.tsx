@@ -1,15 +1,15 @@
-import { Box, Divider, Grid, IconButton, Typography } from "@mui/material";
-import useMediaQuery from "@mui/material/useMediaQuery";
-import theme from "../Theme";
-import Overview from "./Overview";
-import { purchaseOverview } from "../../helpers/dummyData";
-import MoreVertIcon from "@mui/icons-material/MoreVert";
-import styles from "../../styles/SalesOverview.module.css";
+import MoreVertIcon from '@mui/icons-material/MoreVert';
+import { Box, Divider, Grid, IconButton, Typography } from '@mui/material';
+import useMediaQuery from '@mui/material/useMediaQuery';
+import { purchaseOverview } from '../../helpers/dummyData';
+import styles from '../../styles/SalesOverview.module.css';
+import theme from '../Theme';
+import Overview from './Overview';
 
 type Props = {};
 
 const PurchaseOverview = (props: Props) => {
-  const isTable = useMediaQuery(theme.breakpoints.up("md"));
+  const isTable = useMediaQuery(theme.breakpoints.up('md'));
 
   return (
     <>
@@ -17,13 +17,13 @@ const PurchaseOverview = (props: Props) => {
         item
         xs={12}
         md={5.9}
-        sx={{ pt: 1, borderRadius: 2, bgcolor: "#fff" }}
-        className={styles.sales_grid}
+        sx={{ pt: 1, borderRadius: 2, bgcolor: '#fff' }}
+        className={`${styles.sales_grid} dark:bg-gray-900 dark:border dark:border-gray-500`}
       >
         <div className={styles.header_container}>
           <h3 className={styles.sales_header}>Purchase Overview</h3>
           <IconButton>
-            <MoreVertIcon />
+            <MoreVertIcon className="dark:text-gray-100" />
           </IconButton>
         </div>
         <Grid container>

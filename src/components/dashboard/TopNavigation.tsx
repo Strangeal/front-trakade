@@ -1,41 +1,86 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { BiSearchAlt } from 'react-icons/bi';
-import { GrSettingsOption } from 'react-icons/gr';
-import { IoNotificationsSharp } from 'react-icons/io5';
+import { BsFillMoonFill, BsFillSunFill } from 'react-icons/bs';
+import { IoNotificationsSharp, IoSettings } from 'react-icons/io5';
 import { RxCaretDown } from 'react-icons/rx';
 import styles from '../../styles/Home.module.css';
 
 const TopNavigation = () => {
+  const [theme, setTheme] = useState('system');
+  const element = document.documentElement;
+  const root = document.querySelector(':root');
+
+  const handleThemeChange = () => {
+    console.log(element);
+    if (theme === 'light') {
+      setTheme('dark');
+      root?.setAttribute('color-scheme', 'dark');
+    } else {
+      setTheme('light');
+      root?.setAttribute('color-scheme', 'light');
+    }
+  };
+
+  useEffect(() => {
+    switch (theme) {
+      case 'dark':
+        element.classList.add('dark');
+        break;
+      case 'light':
+        element.classList.remove('dark');
+        break;
+      default:
+        break;
+    }
+  }, [theme]);
+
   return (
-    <div className={styles['top-nav']}>
+    <div
+      className={`${styles['top-nav']} bg-white dark:bg-slate-900 dark:border-none`}
+    >
       <div>
         <h1 className="font-bold text-xl">Good Morning Mafia👋</h1>
-        <p className="text-gray-500 text-sm font-bold">
+        <p className="text-gray-500 dark:text-gray-400 text-sm font-bold">
           Hope you have a nice day
         </p>
       </div>
       <div className="flex items-center gap-x-7">
-        <div className="btn-group flex items-center gap-x-7 border-r-2 px-7">
+        <div className="btn-group flex items-center gap-x-3 border-r-2 px-7">
           <button
             type="button"
             title="search"
-            className="flex items-center gap-5 w-[24rem] shadow-lg hover:shadow-md transition-all duration-300 ease-in-out px-5 py-3 rounded-xl"
+            className="flex items-center gap-5 w-[24rem] border border-white shadow-md hover:shadow-sm hover:border-gray-200 dark:border-none dark:bg-slate-800 hover:dark:bg-slate-700 transition-all duration-300 ease-in-out px-5 py-3 rounded-xl"
           >
             <span>
-              <BiSearchAlt className="text-gray-600" />
+              <BiSearchAlt className="text-gray-600 dark:text-gray-300" />
             </span>
-            <p className="text-sm text-gray-600">
+            <p className="text-sm text-gray-600 dark:text-gray-300">
               Search for a transaction, item, etc
             </p>
           </button>
-          <button type="button" title="setting">
-            <span>
-              <GrSettingsOption className="fill-gray-600 text-2xl" />
-            </span>
+          <button
+            type="button"
+            title="theme"
+            onClick={handleThemeChange}
+            className="p-3 rounded-full text-gray-600 bg-white hover:bg-slate-400 hover:text-white transition-all duration-300 ease-in-out text-md dark:bg-slate-900 dark:hover:bg-white dark:text-gray-300 dark:hover:text-slate-900"
+          >
+            {theme === 'light' ? (
+              <span>
+                <BsFillMoonFill />
+              </span>
+            ) : (
+              <span>
+                <BsFillSunFill />
+              </span>
+            )}
           </button>
-          <button type="button" title="notification">
+          <button
+            type="button"
+            title="notification"
+            className="p-3 rounded-full text-gray-600 bg-white hover:bg-slate-400 hover:text-white transition-all duration-300 ease-in-out text-md dark:bg-slate-900 dark:hover:bg-white dark:text-gray-300 dark:hover:text-slate-900"
+          >
             <span>
-              <IoNotificationsSharp className="text-gray-600 text-2xl" />
+              <IoNotificationsSharp className="" />
             </span>
           </button>
         </div>
