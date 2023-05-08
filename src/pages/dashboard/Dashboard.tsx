@@ -1,11 +1,11 @@
-import SaleAct from '../../components/dashboard/SaleAct';
-import SalesOrder from '../../components/dashboard/SalesOrder';
-import { StockSummary } from '../../components/stocks';
+import SaleOverview from "../../components/dashboard/SaleOverview";
+import SalesOrder from "../../components/dashboard/SalesOrder";
+import { StockSummary } from "../../components/stocks";
 
 const Dashboard = () => {
   return (
     <>
-      <SaleAct />
+      <SaleOverview />
 
       <StockSummary />
       <SalesOrder />
