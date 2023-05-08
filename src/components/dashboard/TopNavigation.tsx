@@ -33,6 +33,13 @@ const TopNavigation = () => {
               <GrSettingsOption className="fill-gray-600 text-2xl" />
             </span>
           </button>
+          <button type="button" title="notification">
+            <span>
+              <IoNotificationsSharp className="text-gray-600 text-2xl" />
+            </span>
+          </button>
+        </div>
+
     </div>
   );
 };
