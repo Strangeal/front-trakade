@@ -40,6 +40,25 @@ const TopNavigation = () => {
           </button>
         </div>
 
+        <div className="profile">
+          <button
+            type="button"
+            title="profile"
+            className="flex items-center gap-x-3"
+          >
+            <div className="avatar flex justify-center items-center font-bold border p-2 rounded-full w-14 h-14">
+              <span>MI</span>
+            </div>
+            <div>
+              <p className="text-sm font-bold leading-3">Mafia Ingolo</p>
+              <p className="text-sm text-gray-500 text-start">Admin</p>
+            </div>
+            <span>
+              <RxCaretDown className="text-xl" />
+            </span>
+          </button>
+        </div>
+      </div>
     </div>
   );
 };
