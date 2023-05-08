@@ -17,14 +17,11 @@ type DummyDataProps = {
 };
 
 const Overview = ({ overviews }: DummyDataProps) => {
-  const myStyle = {
-    backgroundColor: "#04A7F9",
-  };
   return (
     <>
       {overviews.map((overview) => (
         <>
-          <Grid item md={5.5} sx={{ mb: 2, justifyContent: "center" }}>
+          <Grid item md={5.5} sx={{ mb: 2 }}>
             <div className={styles.sales_content}>
               <Avatar sx={{ bgcolor: "#E0F4FF", borderRadius: 2, mr: 2 }}>
                 {React.createElement(overview.icons, {

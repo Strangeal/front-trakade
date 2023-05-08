@@ -1,17 +1,7 @@
 import CheckIcon from "@mui/icons-material/Check";
 import KeyboardArrowRightIcon from "@mui/icons-material/KeyboardArrowRight";
-import {
-  Avatar,
-  Box,
-  Divider,
-  Grid,
-  IconButton,
-  Typography,
-} from "@mui/material";
-import useMediaQuery from "@mui/material/useMediaQuery";
-import theme from "../Theme";
+import { Divider, Grid, IconButton } from "@mui/material";
 import InventSummary from "./PurchaseOverview";
-import StyleIcon from "@mui/icons-material/Style";
 import MoreVertIcon from "@mui/icons-material/MoreVert";
 import styles from "../../styles/SalesOverview.module.css";
 import Overview from "./Overview";
@@ -20,7 +10,11 @@ import { salesOverviews } from "../../helpers/dummyData";
 const SaleOverview = () => {
   return (
     <>
-      <Grid container spacing={4} sx={{ width: "100%", mx: 0, mb: 2, gap: 4 }}>
+      <Grid
+        container
+        spacing={4}
+        sx={{ width: "100%", mx: 0, mb: 2, gap: 4, position: "relative" }}
+      >
         <Grid
           item
           xs={12}
@@ -34,9 +28,20 @@ const SaleOverview = () => {
               <MoreVertIcon />
             </IconButton>
           </div>
-          <Grid container>
+          <Grid container sx={{ justifyContent: "space-between" }}>
             <Overview overviews={salesOverviews} />
           </Grid>
+          <Divider
+            orientation="vertical"
+            sx={{
+              width: 2,
+              height: 60,
+              mx: 2,
+              position: "absolute",
+              top: "3rem",
+              left: "14rem",
+            }}
+          />
         </Grid>
         <>
           <InventSummary />
