@@ -1,0 +1,31 @@
+.sales_grid {
+  box-shadow: 0 0 5px rgba(156, 153, 153, 0.6);
+  padding: 10px 20px  !important
+}
+
+.header_container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.sales_header {
+  margin-bottom: 1rem;
+  font-size: 1rem;
+}
+
+.sales_content {
+  display: flex;
+  align-items: center;
+}
+
+.sales_title{
+  font-size: 13px;
+}
+
+.sales_num {
+  font-weight: 700;
+  font-size: 1.8rem;
+  margin: 0;
+  line-height: 1.0;
+}
