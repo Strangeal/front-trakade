@@ -56,6 +56,23 @@ const Dashboard = () => {
         </Card>
 
         {/* Product Details */}
+        <Card title={'Product Details'}>
+          <ul>
+            <li className="flex justify-between items-center py-3">
+              <p className="text-gray-600">Low Stock Items</p>
+              <p className="font-extrabold text-2xl">12</p>
+            </li>
+            <li className="flex justify-between items-center py-3 border-t border-b">
+              <p className="text-gray-600">Item Category</p>
+              <p className="font-extrabold text-2xl">04</p>
+            </li>
+            <li className="flex justify-between items-center py-3">
+              <p className="text-gray-600">Number of Items</p>
+              <p className="font-extrabold text-2xl">1042</p>
+            </li>
+          </ul>
+        </Card>
+
       <StockSummary />
       <SalesOrder />
     </>
