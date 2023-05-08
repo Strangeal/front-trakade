@@ -11,6 +11,11 @@
 html,
 body {
   font-family: 'Nunito', sans-serif;
+  background-color: #f8f8fa;
+}
+
+.ps-sidebar-root {
+  @apply shadow-lg;
 }
 
 .css-1wvake5 {
@@ -50,3 +55,8 @@ div.p-datatable-header {
 /* tbody tr:last-child {
   @apply border-none rounded-3xl;
 } */
+
+.sales_icons {
+  font-size: 2rem;
+  color: #04A7F9;
+}
