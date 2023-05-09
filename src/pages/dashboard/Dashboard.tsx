@@ -1,5 +1,6 @@
+import Customers from "../../components/contacts/Customers";
+import InventItems from "../../components/contacts/InventItems";
 import SaleOverview from "../../components/dashboard/SaleOverview";
-import SalesOrder from "../../components/dashboard/SalesOrder";
 import { StockSummary } from "../../components/stocks";
 import Card from "../../components/stocks/Card";
 
@@ -117,7 +118,8 @@ const Dashboard = () => {
       </section>
 
       <StockSummary />
-      {/* <SalesOrder /> */}
+      <Customers />
+      <InventItems />
     </>
   );
 };
