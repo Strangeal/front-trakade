@@ -1,20 +1,23 @@
 import { Grid } from "@mui/material";
 import { DataGrid } from "@mui/x-data-grid";
 import Suppliers from "./Suppliers";
-import { customersColumns, customersRows, contactToolbar } from "./rowColumns";
+import { customersColumns, customersRows, ContactToolbar } from "./rowColumns";
 
 type Props = {};
 
+const custombar = () => {
+  return <ContactToolbar title="Customers" />;
+};
 const Customers = (props: Props) => {
   return (
-    <div>
+    <>
       <Grid container sx={{ mb: 4 }} spacing={5}>
         <Grid item md={5.96}>
           <DataGrid
             rows={customersRows}
             columns={customersColumns}
             slots={{
-              toolbar: contactToolbar,
+              toolbar: custombar,
             }}
             hideFooter={true}
           />
@@ -23,7 +26,7 @@ const Customers = (props: Props) => {
           <Suppliers />
         </Grid>
       </Grid>
-    </div>
+    </>
   );
 };
 

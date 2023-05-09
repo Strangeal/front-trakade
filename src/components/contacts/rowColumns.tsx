@@ -227,7 +227,10 @@ export const inventItemsColumns: GridColDef[] = [
     renderCell: (params) => {
       return (
         <>
-          <Avatar sx={{ bgcolor: "#DEF1E7", p: 0.5 }} src={params.row.photo} />
+          <Avatar
+            sx={{ bgcolor: "#DEF1E7", p: 0.5, mr: 2 }}
+            src={params.row.photo}
+          />
         </>
       );
     },
@@ -359,17 +362,17 @@ export const inventItemsRows = [
   },
 ];
 
-const tableType = ["Customers", "Suppliers"];
-export const contactToolbar = () => {
+type headerProp = {
+  title: string;
+};
+export const ContactToolbar = ({ title }: headerProp) => {
   return (
     <div className={styles.customers_tb_header}>
       <Box sx={{ display: "flex", alignItems: "center" }}>
         <Avatar sx={{ mr: 1 }} className={styles.header_icon}>
           <IoIosPeople />
         </Avatar>
-        {/* {tableType.map((type) => ( */}
-        <h4>{tableType[0]}</h4>
-        {/* ))} */}
+        <h4>{title}</h4>
       </Box>
       <GridToolbarContainer>
         <MoreVertIcon />
@@ -377,11 +380,3 @@ export const contactToolbar = () => {
     </div>
   );
 };
-
-// const rowColumns = (props: Props) => {
-//   return (
-//     <>
-
-//     </>
-//   )
-// }

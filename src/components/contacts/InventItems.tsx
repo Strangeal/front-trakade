@@ -17,7 +17,7 @@ const InventItems = (props: Props) => {
     return (
       <div className={styles.customers_tb_header}>
         <Box sx={{ display: "flex", alignItems: "center" }}>
-          <Avatar sx={{ p: 0 }} className={styles.header_icon}>
+          <Avatar sx={{ mr: 1 }} className={styles.header_icon}>
             <BsBoxSeamFill className={styles.header_icon} />
           </Avatar>
           <h4>Inventory Items</h4>
