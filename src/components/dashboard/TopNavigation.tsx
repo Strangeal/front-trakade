@@ -5,7 +5,7 @@ import { IoNotificationsSharp, IoSettings } from 'react-icons/io5';
 import { RxCaretDown } from 'react-icons/rx';
 import styles from '../../styles/Home.module.css';
 
-const TopNavigation = () => {
+const TopNavigation = ({ setVisibleRight }) => {
   const [theme, setTheme] = useState<string | null>();
   const element = document.documentElement;
   const root = document.querySelector(':root');
@@ -39,8 +39,6 @@ const TopNavigation = () => {
         break;
     }
   }, [theme]);
-
-  console.log(theme);
 
   return (
     <div
@@ -86,6 +84,7 @@ const TopNavigation = () => {
             type="button"
             title="notification"
             className="p-3 rounded-full text-gray-600 bg-white hover:bg-slate-400 hover:text-white transition-all duration-300 ease-in-out text-md dark:bg-slate-900 dark:hover:bg-white dark:text-gray-300 dark:hover:text-slate-900"
+            onClick={() => setVisibleRight(true)}
           >
             <span>
               <IoNotificationsSharp className="" />

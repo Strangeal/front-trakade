@@ -73,7 +73,7 @@ div.p-datatable-header {
 }
 
 .MuiDataGrid-virtualScroller {
-  color: #6A7280 !important;
+  color: #6a7280 !important;
   font-size: 0.8rem !important;
 }
 
@@ -84,7 +84,7 @@ div.p-datatable-header {
 }
 
 .Mui-selected {
-  background-color: #DEF1E7 !important;
+  background-color: #def1e7 !important;
 }
 
 .MuiDataGrid-row:hover {
