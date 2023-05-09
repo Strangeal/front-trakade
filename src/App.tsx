@@ -23,8 +23,10 @@ function App() {
 
   useEffect(() => {
     const element = document.documentElement;
+    const root = document.querySelector(':root');
     const theme = getCurrentTheme();
     element.classList.add(theme);
+    root?.setAttribute('color-scheme', theme);
   }, []);
 
   return (
