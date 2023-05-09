@@ -73,7 +73,7 @@ div.p-datatable-header {
 }
 
 .MuiDataGrid-virtualScroller {
-  color: #6a7280 !important;
+  color: var(--text) !important;
   font-size: 0.8rem !important;
 }
 
@@ -81,6 +81,10 @@ div.p-datatable-header {
 
 .Mui-checked {
   color: #14c8ab !important;
+}
+
+.css-1gxqqzw-MuiButtonBase-root-MuiCheckbox-root {
+  color: var(--text) !important;
 }
 
 .Mui-selected {

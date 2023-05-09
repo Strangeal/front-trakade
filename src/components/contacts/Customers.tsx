@@ -1,7 +1,7 @@
-import { Grid } from "@mui/material";
-import { DataGrid } from "@mui/x-data-grid";
-import Suppliers from "./Suppliers";
-import { customersColumns, customersRows, ContactToolbar } from "./rowColumns";
+import { Grid } from '@mui/material';
+import { DataGrid } from '@mui/x-data-grid';
+import Suppliers from './Suppliers';
+import { ContactToolbar, customersColumns, customersRows } from './rowColumns';
 
 type Props = {};
 
