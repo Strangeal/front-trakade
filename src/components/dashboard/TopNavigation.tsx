@@ -1,11 +1,15 @@
-import React, { useEffect, useState } from 'react';
+import React, { Dispatch, SetStateAction, useEffect, useState } from 'react';
 import { BiSearchAlt } from 'react-icons/bi';
 import { BsFillMoonFill, BsFillSunFill } from 'react-icons/bs';
 import { IoNotificationsSharp, IoSettings } from 'react-icons/io5';
 import { RxCaretDown } from 'react-icons/rx';
 import styles from '../../styles/Home.module.css';
 
-const TopNavigation = ({ setVisibleRight }) => {
+type TopNavProps = {
+  setVisibleRight: Dispatch<SetStateAction<boolean>>;
+};
+
+const TopNavigation = ({ setVisibleRight }: TopNavProps) => {
   const [theme, setTheme] = useState<string | null>();
   const element = document.documentElement;
   const root = document.querySelector(':root');
