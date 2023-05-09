@@ -8,7 +8,7 @@ type CardProps = {
 
 const Card = ({ title, children }: CardProps) => {
   return (
-    <div className="bg-white p-5 rounded-xl shadow-md h-[16rem]">
+    <div className="bg-white dark:bg-slate-800 p-5 rounded-xl shadow-md h-[16rem]">
       <div className="card-header flex justify-between items-center">
         <h1 className="font-semibold">{title}</h1>
         <button type="button" title="View More">

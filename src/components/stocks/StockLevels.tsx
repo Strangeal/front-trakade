@@ -1,46 +1,48 @@
-import { Button } from "primereact/button";
-import { Column } from "primereact/column";
-import { DataTable } from "primereact/datatable";
+import { Button } from 'primereact/button';
+import { Column } from 'primereact/column';
+import { DataTable } from 'primereact/datatable';
 
 const StockLevels = () => {
   const columns = [
-    { field: "name", header: "Name" },
-    { field: "category", header: "Category" },
-    { field: "quantity", header: "Quantity" },
+    { field: 'name', header: 'Name' },
+    { field: 'category', header: 'Category' },
+    { field: 'quantity', header: 'Quantity' },
   ];
 
   const header = (
     <div className="flex flex-wrap items-center justify-between gap-2">
-      <span className="text-xl text-900 font-bold">Low Stock Levels</span>
+      <span className="text-xl dark:text-gray-100 text-900 font-bold">
+        Low Stock Levels
+      </span>
       <Button icon="pi pi-refresh" rounded raised />
     </div>
   );
 
   const items = [
     {
-      name: "Orange",
+      name: 'Orange',
       quantity: 50,
-      category: "Fruits",
+      category: 'Fruits',
     },
     {
-      name: "Laptops",
+      name: 'Laptops',
       quantity: 120,
-      category: "Electronics",
+      category: 'Electronics',
     },
     {
-      name: "Cabbages",
+      name: 'Cabbages',
       quantity: 320,
-      category: "Vegetables",
+      category: 'Vegetables',
     },
     {
-      name: "Laptops",
+      name: 'Laptops',
       quantity: 120,
-      category: "Electronics",
+      category: 'Electronics',
     },
     {
-      name: "Cabbages",
+      name: 'Cabbages',
       quantity: 320,
-      category: "Vegetables",
+      category: 'Vegetables',
     },
   ];
 

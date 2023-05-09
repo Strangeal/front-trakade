@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;0,1000;1,400;1,700&display=swap');
+@import './styles/_customTheme.css';
 
 @import 'primereact/resources/themes/lara-light-indigo/theme.css';
 @import 'primereact/resources/primereact.min.css';
@@ -11,11 +12,11 @@
 html,
 body {
   font-family: 'Nunito', sans-serif;
-  background-color: #F8F8FA;
+  background-color: #f8f8fa;
 }
 
 .ps-sidebar-root {
-  @apply shadow-lg;
+  @apply shadow-sm;
 }
 
 .css-1wvake5 {
@@ -40,25 +41,27 @@ body {
   color: #14c8ab !important;
 }
 
-/* div.p-datatable {
-  @apply rounded-3xl border overflow-hidden;
-} */
-
 div.p-datatable-header {
-  @apply !bg-[#dfefff];
+  background: var(--table-header-bg) !important;
 }
 
-/* div.p-datatable-wrapper {
-  @apply border-b rounded-3xl;
-} */
+.p-datatable-thead > tr > th {
+  background: var(--table-row-bg) !important;
+  color: var(--text) !important;
+}
 
-/* tbody tr:last-child {
-  @apply border-none rounded-3xl;
-} */
+.p-datatable-tbody > tr {
+  background: var(--table-row-bg) !important;
+  color: var(--text) !important;
+}
+
+.ps-sidebar-container {
+  background-color: var(--sidebar-bg) !important;
+}
 
 .sales_icons {
   font-size: 2rem;
-  color: #04A7F9;
+  color: #04a7f9;
 }
 
 /* Customers */

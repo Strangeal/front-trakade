@@ -13,7 +13,7 @@ const Dashboard = () => {
         {/* Inventory Summary */}
         <Card title={"Inventory Summary"}>
           <div className="card-body flex justify-between">
-            <div className="bg-[#f8f8f8] rounded-xl p-5 w-[9.5rem] h-[10.5rem]">
+            <div className="bg-[#f8f8f8] dark:bg-slate-900 rounded-xl p-5 w-[9.5rem] h-[10.5rem]">
               <div>
                 <svg
                   viewBox="0 0 256 256"
@@ -28,10 +28,12 @@ const Dashboard = () => {
                   ></path>
                 </svg>
               </div>
-              <p className="text-sm text-gray-500 my-2">Quantity in Hand</p>
+              <p className="text-sm text-gray-500 dark:text-gray-300 my-2">
+                Quantity in Hand
+              </p>
               <p className="font-extrabold text-xl">2156</p>
             </div>
-            <div className="bg-[#f8f8f8] rounded-xl p-5 w-[9.5rem] h-[10.5rem]">
+            <div className="bg-[#f8f8f8] dark:bg-slate-900 rounded-xl p-5 w-[9.5rem] h-[10.5rem]">
               <div>
                 <svg
                   viewBox="0 0 24 24"
@@ -50,7 +52,9 @@ const Dashboard = () => {
                   ></path>
                 </svg>
               </div>
-              <p className="text-sm text-gray-500 my-2">Will be Received</p>
+              <p className="text-sm text-gray-500 dark:text-gray-300 my-2">
+                Will be Received
+              </p>
               <p className="font-extrabold text-xl">53</p>
             </div>
           </div>
@@ -60,15 +64,19 @@ const Dashboard = () => {
         <Card title={"Product Details"}>
           <ul>
             <li className="flex justify-between items-center py-3">
-              <p className="text-gray-600">Low Stock Items</p>
+              <p className="text-gray-600 dark:text-slate-400">
+                Low Stock Items
+              </p>
               <p className="font-extrabold text-2xl">12</p>
             </li>
             <li className="flex justify-between items-center py-3 border-t border-b">
-              <p className="text-gray-600">Item Category</p>
+              <p className="text-gray-600 dark:text-slate-400">Item Category</p>
               <p className="font-extrabold text-2xl">04</p>
             </li>
             <li className="flex justify-between items-center py-3">
-              <p className="text-gray-600">Number of Items</p>
+              <p className="text-gray-600 dark:text-slate-400">
+                Number of Items
+              </p>
               <p className="font-extrabold text-2xl">1042</p>
             </li>
           </ul>
@@ -77,7 +85,7 @@ const Dashboard = () => {
         {/* Number of Users */}
         <Card title={"No. of Users"}>
           <div className="card-body flex justify-between">
-            <div className="bg-[#f8f8f8]  rounded-xl p-5 w-[9.5rem] h-[10.5rem]">
+            <div className="bg-[#f8f8f8] dark:bg-slate-900  rounded-xl p-5 w-[9.5rem] h-[10.5rem]">
               <div>
                 <svg
                   viewBox="0 0 640 512"
@@ -91,10 +99,12 @@ const Dashboard = () => {
                   ></path>
                 </svg>
               </div>
-              <p className="text-sm text-gray-500 my-2">Total Customers</p>
+              <p className="text-sm text-gray-500 dark:text-slate-300 my-2">
+                Total Customers
+              </p>
               <p className="font-extrabold text-xl">256</p>
             </div>
-            <div className="bg-[#f8f8f8] rounded-xl p-5 w-[9.5rem] h-[10.5rem]">
+            <div className="bg-[#f8f8f8] dark:bg-slate-900 rounded-xl p-5 w-[9.5rem] h-[10.5rem]">
               <div>
                 <svg
                   viewBox="0 0 16 16"
@@ -110,7 +120,9 @@ const Dashboard = () => {
                   ></path>
                 </svg>
               </div>
-              <p className="text-sm text-gray-500 my-2">Total Suppliers</p>
+              <p className="text-sm text-gray-500 dark:text-slate-300 my-2">
+                Total Suppliers
+              </p>
               <p className="font-extrabold text-xl">27</p>
             </div>
           </div>

@@ -17,12 +17,9 @@ import {
   sidebarClasses,
 } from 'react-pro-sidebar';
 import { Link } from 'react-router-dom';
-import styles from '../../styles/Home.module.css';
 
 import React from 'react';
 
-// #14C8AB
-// #8888B92
 const SideBar = () => {
   return (
     <Sidebar

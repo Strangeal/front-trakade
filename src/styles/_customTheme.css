@@ -1,0 +1,28 @@
+:root {
+  scroll-behavior: smooth;
+  scroll-padding-top: 2rem;
+
+  --table-bg-light: #dfefff;
+  --sidebar-bg-light: #fff;
+  --table-row-bg-light: #fff;
+  --text-light: rgb(77, 77, 77);
+
+  --table-bg-dark: #102a41;
+  --sidebar-bg-dark: #192232;
+  --table-row-bg-dark: transparent;
+  --text-dark: #fff;
+}
+
+[color-scheme='dark'] {
+  --table-header-bg: var(--table-bg-dark);
+  --sidebar-bg: var(--sidebar-bg-dark);
+  --table-row-bg: var(--table-row-bg-dark);
+  --text: var(--text-dark);
+}
+
+[color-scheme='light'] {
+  --table-header-bg: var(--table-bg-light);
+  --sidebar-bg: var(--sidebar-bg-light);
+  --table-row-bg: var(--table-row-bg-light);
+  --text: var(--text-light);
+}
