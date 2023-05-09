@@ -24,9 +24,9 @@ const Home = () => {
             onHide={() => setVisibleRight(false)}
             closeIcon="pi pi-angle-right"
             blockScroll={true}
-            // showCloseIcon={false}
+            className="dark:bg-slate-800"
           >
-            <div className="absolute top-[1.4rem] flex items-center gap-x-2 text-slate-900">
+            <div className="absolute top-[1.4rem] flex items-center gap-x-2 text-slate-900 dark:text-slate-100">
               <span>
                 <IoNotificationsOutline />
               </span>
