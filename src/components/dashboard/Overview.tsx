@@ -19,22 +19,20 @@ type DummyDataProps = {
 const Overview = ({ overviews }: DummyDataProps) => {
   return (
     <>
-      {overviews.map((overview) => (
-        <>
-          <Grid item md={5.5} sx={{ mb: 2 }}>
-            <div className={styles.sales_content}>
-              <Avatar sx={{ bgcolor: "#E0F4FF", borderRadius: 2, mr: 2 }}>
-                {React.createElement(overview.icons, {
-                  className: "sales_icons",
-                })}
-              </Avatar>
-              <div>
-                <p className={styles.sales_title}>{overview?.title}</p>
-                <h3 className={styles.sales_num}>{overview?.num}</h3>
-              </div>
+      {overviews.map((overview, index) => (
+        <Grid item md={5.5} sx={{ mb: 2 }} key={index}>
+          <div className={styles.sales_content}>
+            <Avatar sx={{ bgcolor: "#E0F4FF", borderRadius: 2, mr: 2 }}>
+              {React.createElement(overview.icons, {
+                className: "sales_icons",
+              })}
+            </Avatar>
+            <div>
+              <p className={styles.sales_title}>{overview?.title}</p>
+              <h3 className={styles.sales_num}>{overview?.num}</h3>
             </div>
-          </Grid>
-        </>
+          </div>
+        </Grid>
       ))}
     </>
   );

@@ -63,3 +63,37 @@ div.p-datatable-header {
   font-size: 2rem;
   color: #04a7f9;
 }
+
+/* Customers */
+.MuiDataGrid-columnHeaders {
+  background-color: #e9f5f4 !important;
+  min-height: 40px !important;
+  max-height: 40px !important;
+  font-size: 12px !important;
+}
+
+.MuiDataGrid-virtualScroller {
+  color: #6A7280 !important;
+  font-size: 0.8rem !important;
+}
+
+/* 6A7280 */
+
+.Mui-checked {
+  color: #14c8ab !important;
+}
+
+.Mui-selected {
+  background-color: #DEF1E7 !important;
+}
+
+.MuiDataGrid-row:hover {
+  background-color: #def1e783 !important;
+}
+
+.MuiDataGrid-columnHeader:focus,
+.MuiDataGrid-cell:focus,
+.MuiDataGrid-columnHeader:focus-within,
+.MuiDataGrid-cell:focus-within {
+  outline: none !important;
+}

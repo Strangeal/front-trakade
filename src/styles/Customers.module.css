@@ -1,0 +1,14 @@
+.customers_tb_header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0 0.5rem;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid #ddd;
+}
+
+.header_icon {
+  color: #32AC63 !important;
+  background-color: #DEF1E7 !important;
+  text-transform:capitalize
+}
