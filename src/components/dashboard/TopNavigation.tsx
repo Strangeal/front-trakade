@@ -6,12 +6,11 @@ import { RxCaretDown } from 'react-icons/rx';
 import styles from '../../styles/Home.module.css';
 
 const TopNavigation = () => {
-  const [theme, setTheme] = useState('system');
+  const [theme, setTheme] = useState<string | null>();
   const element = document.documentElement;
   const root = document.querySelector(':root');
 
   const handleThemeChange = () => {
-    console.log(element);
     if (theme === 'light') {
       setTheme('dark');
       root?.setAttribute('color-scheme', 'dark');
@@ -22,17 +21,26 @@ const TopNavigation = () => {
   };
 
   useEffect(() => {
+    const theme = localStorage.getItem('app_theme');
+    setTheme(theme!);
+  }, []);
+
+  useEffect(() => {
     switch (theme) {
       case 'dark':
         element.classList.add('dark');
+        localStorage.setItem('app_theme', 'dark');
         break;
       case 'light':
         element.classList.remove('dark');
+        localStorage.setItem('app_theme', 'light');
         break;
       default:
         break;
     }
   }, [theme]);
+
+  console.log(theme);
 
   return (
     <div

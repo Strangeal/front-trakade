@@ -10,7 +10,13 @@ function App() {
       ? 'dark'
       : 'light';
 
-    localStorage.setItem('app_theme', theme);
+    let theme_from_storage = localStorage.getItem('app_theme');
+
+    if (theme_from_storage) {
+      theme = theme_from_storage;
+    } else {
+      localStorage.setItem('app_theme', theme);
+    }
 
     return theme;
   };
