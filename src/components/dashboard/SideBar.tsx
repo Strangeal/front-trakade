@@ -1,34 +1,72 @@
-import Icon from '@mui/material/Icon';
-import { BiPackage } from 'react-icons/bi';
+import Icon from "@mui/material/Icon";
+import { BiPackage } from "react-icons/bi";
 import {
   BsCheck2All,
   BsFillBasket2Fill,
   BsFillPersonVcardFill,
-} from 'react-icons/bs';
-import { FaFileInvoice, FaTools } from 'react-icons/fa';
-import { MdCategory, MdFavorite, MdShoppingBag } from 'react-icons/md';
-import { RiBillFill, RiShoppingCartFill } from 'react-icons/ri';
-import { TiChartLine } from 'react-icons/ti';
+} from "react-icons/bs";
+import { FaFileInvoice, FaTools } from "react-icons/fa";
+import { MdCategory, MdFavorite, MdShoppingBag } from "react-icons/md";
+import { RiBillFill, RiShoppingCartFill } from "react-icons/ri";
+import { TiChartLine } from "react-icons/ti";
 import {
   Menu,
   MenuItem,
   Sidebar,
   SubMenu,
   sidebarClasses,
-} from 'react-pro-sidebar';
-import { Link } from 'react-router-dom';
+} from "react-pro-sidebar";
+import { Link } from "react-router-dom";
 
-import React from 'react';
+import React from "react";
 
 const SideBar = () => {
+  const navItem = [
+    {
+      icon: MdCategory,
+      name: "Categories",
+    },
+    {
+      icon: BsFillBasket2Fill,
+      name: "Items",
+    },
+    {
+      icon: RiShoppingCartFill,
+      name: "Sales orders",
+    },
+    {
+      icon: BiPackage,
+      name: "Packages",
+    },
+    {
+      icon: FaFileInvoice,
+      name: "Invoices",
+    },
+    {
+      icon: MdShoppingBag,
+      name: "Purcahase Orders",
+    },
+    {
+      icon: RiBillFill,
+      name: "Bills",
+    },
+    {
+      icon: FaTools,
+      name: "Integrations",
+    },
+    {
+      icon: TiChartLine,
+      name: "Reports",
+    },
+  ];
   return (
     <Sidebar
       rootStyles={{
         [`.${sidebarClasses.container}`]: {
-          backgroundColor: 'white',
-          height: '100vh',
-          width: '15.5rem',
-          position: 'fixed',
+          backgroundColor: "white",
+          height: "100vh",
+          width: "15.5rem",
+          position: "fixed",
           zIndex: 100,
         },
       }}
@@ -50,19 +88,15 @@ const SideBar = () => {
           </MenuItem>
           <MenuItem icon={React.createElement(BsCheck2All)}>All</MenuItem>
         </SubMenu>
-        <MenuItem icon={React.createElement(MdCategory)}>Categories</MenuItem>
-        <MenuItem icon={React.createElement(BsFillBasket2Fill)}>Items</MenuItem>
-        <MenuItem icon={React.createElement(RiShoppingCartFill)}>
-          Sales orders
-        </MenuItem>
-        <MenuItem icon={React.createElement(BiPackage)}>Packages</MenuItem>
-        <MenuItem icon={React.createElement(FaFileInvoice)}>Invoices</MenuItem>
-        <MenuItem icon={React.createElement(MdShoppingBag)}>
-          Purcahase Orders
-        </MenuItem>
-        <MenuItem icon={React.createElement(RiBillFill)}>Bills</MenuItem>
-        <MenuItem icon={React.createElement(FaTools)}>Integrations</MenuItem>
-        <MenuItem icon={React.createElement(TiChartLine)}>Reports</MenuItem>
+
+        {navItem.map(({ icon, name }) => (
+          <MenuItem
+            component={<Link to="/" />}
+            icon={React.createElement(icon)}
+          >
+            {name}
+          </MenuItem>
+        ))}
       </Menu>
     </Sidebar>
   );
