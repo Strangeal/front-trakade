@@ -1,7 +1,7 @@
 section.cat_container {
-  @apply grid xl:grid-cols-3 gap-4 grid-cols-1 my-6;
+  @apply flex flex-wrap gap-x-6 my-6;
 }
 
 div.cat_summary {
-  @apply bg-[#e9f5f4] col-span-2 p-8 rounded-3xl;
+  @apply bg-[#e9f5f4] w-[47rem] p-8 rounded-3xl;
 }

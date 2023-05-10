@@ -3,7 +3,7 @@ section.home {
 }
 
 div.top-nav {
-  @apply shadow-sm border-b w-full px-7 py-5 mb-10 flex justify-between items-center;
+  @apply shadow-sm border-b w-full px-7 py-5 flex justify-between items-center;
 }
 
 div.main-content {

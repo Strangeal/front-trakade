@@ -53,7 +53,7 @@ const Home = () => {
           </Sidebar>
         </section>
 
-        <div className="p-4 mt-4 mb-8">
+        <div className="p-4 mt-4 mb-8 min-h-screen">
           <Outlet />
         </div>
       </div>
