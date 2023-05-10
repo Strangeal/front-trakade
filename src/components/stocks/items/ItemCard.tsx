@@ -26,10 +26,14 @@ const ItemCard = ({ item }: ItemProps) => {
             </div>
             <div className="flex justify-between flex-grow">
               <div className="text-start">
-                <h2 className="font-bold">{item.name}</h2>
-                <p className="text-sm">{item.category}</p>
+                <h2 className="font-bold text-slate-800 dark:text-slate-100">
+                  {item.name}
+                </h2>
+                <p className="text-sm text-slate-600 dark:text-slate-400">
+                  {item.category}
+                </p>
               </div>
-              <p className="font-bold">
+              <p className="font-semibold">
                 $<span>{item.unit_price.toFixed(2)}</span>
               </p>
             </div>

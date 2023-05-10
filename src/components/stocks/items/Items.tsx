@@ -75,10 +75,10 @@ const Items = () => {
               name="search_item"
               id="search_item"
               placeholder="Search item"
-              className="border bg-white p-2 rounded w-full focus:outline-none focus:border-slate-400 transition duration-300"
+              className="border bg-white dark:bg-slate-800 p-2 rounded w-full focus:outline-none focus:border-slate-400 transition duration-300 dark:text-slate-100 dark:border-slate-800 dark:focus:border-slate-400"
               aria-label="Search Item"
             />
-            <div className="absolute top-3 right-5 text-slate-600">
+            <div className="absolute top-3 right-5 text-slate-600 dark:text-slate-300">
               <BsSearch />
             </div>
           </div>
