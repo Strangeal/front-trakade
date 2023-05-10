@@ -83,7 +83,10 @@ div.p-datatable-header {
   color: #14c8ab !important;
 }
 
-.css-1gxqqzw-MuiButtonBase-root-MuiCheckbox-root {
+.css-1gxqqzw-MuiButtonBase-root-MuiCheckbox-root,
+.css-rtrcn9-MuiTablePagination-root,
+.css-pqjvzy-MuiSvgIcon-root-MuiSelect-icon,
+.css-zylse7-MuiButtonBase-root-MuiIconButton-root.Mui-disabled {
   color: var(--text) !important;
 }
 
