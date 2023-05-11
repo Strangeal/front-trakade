@@ -101,3 +101,14 @@ div.p-datatable-header {
 .MuiDataGrid-cell:focus-within {
   outline: none !important;
 }
+
+.css-8je8zh-MuiTouchRipple-root {
+  display: none !important;
+}
+
+.css-3jq30o-MuiInputBase-root-MuiInput-root:after {
+  display: none !important;
+  
+  }
+
+
