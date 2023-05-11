@@ -1,32 +1,33 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import { Provider } from 'react-redux';
-import { createBrowserRouter, RouterProvider } from 'react-router-dom';
-import App from './App';
-import { AllCategories } from './components/stocks';
-import './index.css';
-import Login from './pages/auth/Login';
-import Register from './pages/auth/Register';
-import Dashboard from './pages/dashboard/Dashboard';
-import Home from './pages/dashboard/Home';
-import store from './redux/store';
+import React from "react";
+import ReactDOM from "react-dom/client";
+import { Provider } from "react-redux";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import App from "./App";
+import { AllCategories } from "./components/stocks";
+import "./index.css";
+import Login from "./pages/auth/Login";
+import Register from "./pages/auth/Register";
+import Dashboard from "./pages/dashboard/Dashboard";
+import Home from "./pages/dashboard/Home";
+import store from "./redux/store";
+import Categories from "./components/category/Catgories";
 
 const router = createBrowserRouter([
   {
-    path: '/',
+    path: "/",
     element: <App />,
     children: [
       {
         index: true,
-        path: '/',
+        path: "/",
         element: <Login />,
       },
       {
-        path: '/register',
+        path: "/register",
         element: <Register />,
       },
       {
-        path: '/dashboard',
+        path: "/dashboard",
         element: <Home />,
         children: [
           {
@@ -34,8 +35,8 @@ const router = createBrowserRouter([
             element: <Dashboard />,
           },
           {
-            path: 'categories',
-            element: <AllCategories />,
+            path: "categories",
+            element: <Categories />,
           },
         ],
       },
@@ -43,7 +44,7 @@ const router = createBrowserRouter([
   },
 ]);
 
-ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
+ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
   <React.StrictMode>
     <Provider store={store}>
       <RouterProvider router={router} />
