@@ -25,38 +25,47 @@ const SideBar = () => {
     {
       icon: MdCategory,
       name: "Categories",
+      path: "/dashboard/categories",
     },
     {
       icon: BsFillBasket2Fill,
       name: "Items",
+      path: "/",
     },
     {
       icon: RiShoppingCartFill,
       name: "Sales orders",
+      path: "/",
     },
     {
       icon: BiPackage,
       name: "Packages",
+      path: "/",
     },
     {
       icon: FaFileInvoice,
       name: "Invoices",
+      path: "/",
     },
     {
       icon: MdShoppingBag,
       name: "Purcahase Orders",
+      path: "/",
     },
     {
       icon: RiBillFill,
       name: "Bills",
+      path: "/",
     },
     {
       icon: FaTools,
       name: "Integrations",
+      path: "/",
     },
     {
       icon: TiChartLine,
       name: "Reports",
+      path: "/",
     },
   ];
   return (
@@ -89,9 +98,10 @@ const SideBar = () => {
           <MenuItem icon={React.createElement(BsCheck2All)}>All</MenuItem>
         </SubMenu>
 
-        {navItem.map(({ icon, name }) => (
+        {navItem.map(({ icon, name, path }) => (
           <MenuItem
-            component={<Link to="/" />}
+            key={name}
+            component={<Link to={path} />}
             icon={React.createElement(icon)}
           >
             {name}
