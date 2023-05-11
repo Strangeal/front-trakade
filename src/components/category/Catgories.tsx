@@ -163,7 +163,7 @@ const Row = (props: { row: ReturnType<typeof createData> }) => {
                             sx={{ mr: 2, width: "10%" }}
                             label="Tag:"
                             type="text"
-                            defaultValue="Hello"
+                            defaultValue="#0012"
                             variant="standard"
                             InputProps={{
                               readOnly: true,
@@ -171,9 +171,9 @@ const Row = (props: { row: ReturnType<typeof createData> }) => {
                           />
                           <TextField
                             sx={{ mx: 2 }}
-                            label="Suppliers:"
+                            label="Barcode:"
                             type="text"
-                            defaultValue="Hello World"
+                            defaultValue="0936683009624"
                             variant="standard"
                             InputProps={{
                               readOnly: true,
@@ -181,9 +181,9 @@ const Row = (props: { row: ReturnType<typeof createData> }) => {
                           />
                           <TextField
                             sx={{}}
-                            label="Stocks:"
+                            label="No. of Vendor:"
                             type="text"
-                            defaultValue="Hello World"
+                            defaultValue="586"
                             variant="standard"
                             InputProps={{
                               readOnly: true,
@@ -205,9 +205,9 @@ const Row = (props: { row: ReturnType<typeof createData> }) => {
                           />
                           <TextField
                             sx={{ mx: 2 }}
-                            label="Suppliers:"
+                            label="Reserved:"
                             type="text"
-                            defaultValue="Hello World"
+                            defaultValue="56"
                             variant="standard"
                             InputProps={{
                               readOnly: true,
@@ -217,7 +217,7 @@ const Row = (props: { row: ReturnType<typeof createData> }) => {
                             sx={{}}
                             label="Stocks:"
                             type="text"
-                            defaultValue="Hello World"
+                            defaultValue="783 Boxes"
                             variant="standard"
                             InputProps={{
                               readOnly: true,
@@ -231,7 +231,7 @@ const Row = (props: { row: ReturnType<typeof createData> }) => {
                         <Box sx={{}}>
                           <TextField
                             sx={{ mr: 2, width: "15%" }}
-                            label="Stocks:"
+                            label="Price:"
                             type="number"
                             defaultValue="45"
                             variant="standard"
@@ -241,9 +241,9 @@ const Row = (props: { row: ReturnType<typeof createData> }) => {
                           />
                           <TextField
                             sx={{}}
-                            label="Stocks:"
+                            label="Collection:"
                             type="text"
-                            defaultValue="Hello World"
+                            defaultValue="Flex Cosmetics"
                             variant="standard"
                             InputProps={{
                               readOnly: true,
@@ -254,9 +254,9 @@ const Row = (props: { row: ReturnType<typeof createData> }) => {
                         <Box sx={{ my: 4 }}>
                           <TextField
                             sx={{ mr: 2, width: "15%" }}
-                            label="Stocks:"
-                            type="number"
-                            defaultValue="78"
+                            label="Cost:"
+                            type="text"
+                            defaultValue="78,000"
                             variant="standard"
                             InputProps={{
                               readOnly: true,
@@ -264,9 +264,9 @@ const Row = (props: { row: ReturnType<typeof createData> }) => {
                           />
                           <TextField
                             sx={{}}
-                            label="Stocks:"
+                            label="Country:"
                             type="text"
-                            defaultValue="Hello World"
+                            defaultValue="Ghana"
                             variant="standard"
                             InputProps={{
                               readOnly: true,
@@ -275,12 +275,12 @@ const Row = (props: { row: ReturnType<typeof createData> }) => {
                           <br />
                         </Box>
 
-                        <Box sx={{}}>
+                        <Box sx={{ width: "fit-content" }}>
                           <TextField
                             sx={{ mr: 2 }}
-                            label="Stocks:"
+                            label="Vendor:"
                             type="text"
-                            defaultValue="Hello World"
+                            defaultValue="Flex"
                             variant="standard"
                             InputProps={{
                               readOnly: true,
