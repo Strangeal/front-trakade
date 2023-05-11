@@ -5,3 +5,47 @@ section.cat_container {
 div.cat_summary {
   @apply bg-[#e9f5f4] col-span-2 p-8 rounded-3xl;
 }
+
+
+.cat_table {
+  background-color: #f8f8fa !important;
+}
+
+.cat_table_dropdown {
+  background-color: #fff !important;
+  margin: 2rem 0 !important;
+  /* margin: 16rem !important; */
+  /* box-shadow: ; */
+}
+
+.mui_textField input {
+  color: #82929D;
+  font-size: 0.95rem;
+  /* background-color: brown !important; */
+}
+
+.mui_textField label {
+  color: #5DADE2 !important;
+  font-size: 0.9rem;
+}
+
+.mui_textField label:focus {
+  color: transparent !important;
+}
+
+.cat_dropdown_footer {
+  display: flex;
+  align-items: center;
+  color: #82929D;
+}
+
+.add_category_btn {
+  color: #5DADE2 !important;
+  text-transform: inherit !important;
+  font-weight: 600 !important;
+
+}
+
+.add_category_btn:hover {
+  background: transparent !important;
+}
