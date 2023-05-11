@@ -21,6 +21,7 @@ div.cat_summary {
 .mui_textField input {
   color: #82929D;
   font-size: 0.95rem;
+  border-bottom: 1px solid #82929D;
   /* background-color: brown !important; */
 }
 
@@ -48,4 +49,16 @@ div.cat_summary {
 
 .add_category_btn:hover {
   background: transparent !important;
+}
+.header_label {
+  color: #82929D !important;
+}
+
+.header_input {
+  margin-top: 0 !important;
+  padding-top: 10px !important;
+  background-color: #E9E9EB;
+  border-radius: 5px;
+  border-bottom: 1px solid #82929D !important;
+
 }
