@@ -109,9 +109,18 @@ div.p-datatable-header {
   display: none !important;
 }
 
-.css-3jq30o-MuiInputBase-root-MuiInput-root:after {
+.css-3jq30o-MuiInputBase-root-MuiInput-root:after,
+.css-3jq30o-MuiInputBase-root-MuiInput-root:before {
   display: none !important;
   
   }
 
+  /* new */
 
+.css-1ex1afd-MuiTableCell-root{
+  color: #82929D !important;
+}
+
+  .css-1gzkxga-MuiSelect-select-MuiInputBase-input-MuiFilledInput-input {
+    padding-top: 15px !important;
+  }
