@@ -5,7 +5,7 @@ import {
   BsFillBasket2Fill,
   BsFillPersonVcardFill,
 } from "react-icons/bs";
-import { FaFileInvoice, FaTools } from "react-icons/fa";
+import { FaFileInvoice, FaHome, FaTools } from "react-icons/fa";
 import { MdCategory, MdFavorite, MdShoppingBag } from "react-icons/md";
 import { RiBillFill, RiShoppingCartFill } from "react-icons/ri";
 import { TiChartLine } from "react-icons/ti";
@@ -23,6 +23,11 @@ import React from "react";
 const SideBar = () => {
   const navItem = [
     {
+      icon: FaHome,
+      name: "Dashboard",
+      path: "dashboard",
+    },
+    {
       icon: MdCategory,
       name: "Categories",
       path: "/dashboard/categories",
@@ -30,12 +35,12 @@ const SideBar = () => {
     {
       icon: BsFillBasket2Fill,
       name: "Items",
-      path: "/",
+      path: "dashboard/items",
     },
     {
       icon: RiShoppingCartFill,
       name: "Sales orders",
-      path: "/",
+      path: "dashboard/sales",
     },
     {
       icon: BiPackage,
@@ -81,27 +86,23 @@ const SideBar = () => {
       }}
     >
       {/* Showing my tailwind skills 🤣🤣 */}
-      <h2 className="p-4 text-center font-bold text-3xl text-teal-500">
-        Sidebar
+      <h2 className="p-4 uppercase text-center font-bold text-3xl text-teal-500">
+        Trakade
       </h2>
       <Menu>
-        <SubMenu
-          label="Contacts"
-          icon={React.createElement(BsFillPersonVcardFill)}
-        >
+        {/* {navItem.map(({ icon, name, path }) => (
           <MenuItem
             component={<Link to="/" />}
             icon={React.createElement(MdFavorite)}
           >
             Favorite
-          </MenuItem>
-          <MenuItem icon={React.createElement(BsCheck2All)}>All</MenuItem>
-        </SubMenu>
+          </MenuItem><MenuItem icon={React.createElement(BsCheck2All)}>All</MenuItem></>
+        </SubMenu> */}
 
         {navItem.map(({ icon, name, path }) => (
           <MenuItem
             key={name}
-            component={<Link to={path} />}
+            component={<Link to={`/${path}`} />}
             icon={React.createElement(icon)}
           >
             {name}

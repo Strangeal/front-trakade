@@ -1,82 +1,76 @@
-import { useState } from "react";
-import { default as ReactApexChart } from "react-apexcharts";
-import styles from "../../styles/Categories.module.css";
-import StockLevels from "./StockLevels";
+import { useState } from 'react';
+import { default as ReactApexChart } from 'react-apexcharts';
+import styles from '../../styles/Categories.module.css';
+import StockLevels from './StockLevels';
 
 const StockSummary = () => {
-  const options = {
+  const chart = {
     series: [
       {
-        data: [21200, 29042, 36110, 27185, 15169, 25410, 18933, 30809],
+        name: 'Sales',
+        data: [28, 29, 33, 36, 32, 32, 33],
+      },
+      {
+        name: 'Purchases',
+        data: [12, 11, 14, 18, 17, 13, 13],
       },
     ],
     options: {
-      title: {
-        text: "Category Summary",
-        style: {
-          fontFamily: "Nunito",
-          fontSize: "18px",
-        },
-      },
       chart: {
         height: 350,
-        type: "bar",
-        background: "#e9f5f4",
-      },
-      plotOptions: {
-        bar: {
-          columnWidth: "50%",
-          distributed: true,
+        type: 'line',
+        zoom: {
+          enabled: false,
         },
       },
       dataLabels: {
         enabled: false,
       },
-      legend: {
-        show: false,
+      stroke: {
+        show: true,
+        curve: 'straight',
+        width: 2,
+      },
+      title: {
+        text: 'Sales And Purchase Statistics',
+        align: 'left',
+        style: {
+          fontSize: '16px',
+          fontWeight: 'normal',
+        },
+      },
+      grid: {
+        row: {
+          colors: ['#f3f3f3', 'transparent'],
+          opacity: 0.5,
+        },
       },
       xaxis: {
         categories: [
-          ["Fruits"],
-          ["Vegetables"],
-          ["Drinks"],
-          "Toiletries",
-          ["Furniture"],
-          ["Pastries"],
-          ["Skin", "Care"],
-          ["Electronics"],
+          'Jan',
+          'Feb',
+          'Mar',
+          'Apr',
+          'May',
+          'Jun',
+          'Jul',
+          'Aug',
+          'Sep',
         ],
-        labels: {
-          style: {
-            // colors: colors,
-            fontSize: "12px",
-          },
-        },
-        title: {
-          text: "Category",
-        },
-      },
-      yaxis: {
-        show: true,
-        showAlways: true,
-        title: {
-          text: "Quantity",
-          offsetX: -5,
-        },
       },
     },
   };
 
   return (
     <section className={styles.cat_container}>
-      <div className="">
+      <div className="w-[25rem]">
         <StockLevels />
       </div>
       <div className={styles.cat_summary}>
         <ReactApexChart
-          options={options.options}
-          series={options.series}
-          type="bar"
+          options={chart.options}
+          series={chart.series}
+          type="line"
           height={350}
         />
       </div>
