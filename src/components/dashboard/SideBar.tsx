@@ -25,7 +25,7 @@ const SideBar = () => {
     {
       icon: FaHome,
       name: "Dashboard",
-      path: "dashboard",
+      path: "/dashboard",
     },
     {
       icon: MdCategory,
@@ -35,12 +35,12 @@ const SideBar = () => {
     {
       icon: BsFillBasket2Fill,
       name: "Items",
-      path: "dashboard/items",
+      path: "/dashboard/items",
     },
     {
       icon: RiShoppingCartFill,
       name: "Sales orders",
-      path: "dashboard/sales",
+      path: "/dashboard/sales",
     },
     {
       icon: BiPackage,
@@ -102,7 +102,7 @@ const SideBar = () => {
         {navItem.map(({ icon, name, path }) => (
           <MenuItem
             key={name}
-            component={<Link to={`/${path}`} />}
+            component={<Link to={`${path}`} />}
             icon={React.createElement(icon)}
           >
             {name}
