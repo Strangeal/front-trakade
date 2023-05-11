@@ -3,10 +3,15 @@ import {
   Box,
   Button,
   Collapse,
+  Drawer,
+  FormControl,
   Grid,
   IconButton,
+  Input,
   InputAdornment,
+  MenuItem,
   Paper,
+  Select,
   Table,
   TableBody,
   TableCell,
@@ -14,7 +19,6 @@ import {
   TableHead,
   TableRow,
   TextField,
-  Toolbar,
   Typography,
 } from "@mui/material";
 import React from "react";
@@ -25,6 +29,7 @@ import AutoAwesomeMotionIcon from "@mui/icons-material/AutoAwesomeMotion";
 import FolderDeleteIcon from "@mui/icons-material/FolderDelete";
 import SearchIcon from "@mui/icons-material/Search";
 import AddIcon from "@mui/icons-material/Add";
+import { AccountCircle } from "@mui/icons-material";
 
 type Props = {};
 
@@ -85,7 +90,7 @@ const Row = (props: { row: ReturnType<typeof createData> }) => {
       <TableRow sx={{ my: 12 }}>
         <TableCell
           // className={`shadow-md`}
-          style={{ paddingBottom: 0, paddingTop: 0 }}
+          style={{ paddingBottom: 0, paddingTop: 0, width: "100%" }}
           colSpan={6}
         >
           <Collapse
@@ -336,97 +341,124 @@ const rows = [
   // createData("002", "Gingerbread", 356, 16.0),
 ];
 
+const drawerWidth = 210;
+
 const Catgories = (props: Props) => {
   return (
-    <>
-      <TableContainer
-        component={Paper}
-        elevation={0}
-        className={styles.cat_table}
-      >
-        <Table aria-label="collapsible table">
-          <TableHead sx={{}}>
-            <TableRow sx={{}}>
-              <TableCell colSpan={6} sx={{ border: 0 }}>
-                <Box sx={{ display: "flex", justifyContent: "space-between" }}>
-                  <Button className={styles.add_category_btn}>
-                    <AddIcon sx={{ fontSize: 18 }} />
-                    <span>Add Category</span>
-                  </Button>
+    <Grid container>
+      <Grid item md={10} sx={{ width: "100%" }}>
+        <TableContainer
+          component={Paper}
+          elevation={0}
+          className={styles.cat_table}
+        >
+          <Table aria-label="collapsible table">
+            <TableHead sx={{}}>
+              <TableRow sx={{}}>
+                <TableCell colSpan={6} sx={{ border: 0 }}>
                   <Box
-                    className={styles.cat_header_form}
-                    component="form"
-                    noValidate
-                    sx={{ display: "flex", width: "60%", gap: 2 }}
+                    sx={{ display: "flex", justifyContent: "space-between" }}
                   >
-                    <TextField
-                      type="text"
-                      label="Search"
-                      inputProps={{
-                        startAdornment: (
-                          <InputAdornment position="end">
-                            <SearchIcon />
-                          </InputAdornment>
-                        ),
-                      }}
-                      placeholder="Search..."
-                      variant="filled"
-                      size="small"
-                      fullWidth
-                      focused={false}
-                    />
-                    <TextField
-                      select
-                      label="Category"
-                      variant="filled"
-                      size="small"
-                      SelectProps={{
-                        native: true,
-                      }}
-                      fullWidth
-                      focused={false}
+                    <Button className={styles.add_category_btn}>
+                      <AddIcon sx={{ fontSize: 18 }} />
+                      <span>Add Category</span>
+                    </Button>
+                    <Box
+                      className={styles.cat_header_form}
+                      component="form"
+                      noValidate
+                      sx={{ display: "flex", width: "60%", gap: 2 }}
                     >
-                      <option>hello</option>
-                      <option>yello</option>
-                      <option>hola</option>
-                      <option>lola</option>
-                    </TextField>
-                    <TextField
-                      select
-                      label="Filter"
-                      variant="filled"
-                      size="small"
-                      SelectProps={{
-                        native: true,
-                      }}
-                      focused={false}
-                      fullWidth
-                    >
-                      <option>hello</option>
-                      <option>yello</option>
-                      <option>hola</option>
-                      <option>lola</option>
-                    </TextField>
+                      <FormControl fullWidth>
+                        <label className={styles.header_label}>Search</label>
+                        <Input
+                          className={styles.header_input}
+                          type="text"
+                          placeholder="Search..."
+                          id="my-input"
+                          aria-describedby="my-helper-text"
+                          startAdornment={
+                            <InputAdornment
+                              position="start"
+                              sx={{ bgcolor: "#ddd" }}
+                            >
+                              <SearchIcon sx={{ ml: 1 }} />
+                            </InputAdornment>
+                          }
+                        />
+                      </FormControl>
+                      <FormControl
+                        variant="filled"
+                        fullWidth
+                        size="small"
+                        focused={false}
+                      >
+                        <label className={styles.header_label}>Category</label>
+
+                        <Select sx={{ pt: 0 }}>
+                          <MenuItem value="">
+                            <em>None</em>
+                          </MenuItem>
+                          <MenuItem value={10}>Ten</MenuItem>
+                          <MenuItem value={20}>Twenty</MenuItem>
+                          <MenuItem value={30}>Thirty</MenuItem>
+                        </Select>
+                      </FormControl>
+                      <FormControl
+                        variant="filled"
+                        fullWidth
+                        size="small"
+                        focused={false}
+                      >
+                        <label className={styles.header_label}>Filter</label>
+
+                        <Select sx={{ pt: 0 }}>
+                          <MenuItem value="">
+                            <em>None</em>
+                          </MenuItem>
+                          <MenuItem value={10}>Ten</MenuItem>
+                          <MenuItem value={20}>Twenty</MenuItem>
+                          <MenuItem value={30}>Thirty</MenuItem>
+                        </Select>
+                      </FormControl>
+                    </Box>
                   </Box>
-                </Box>
-              </TableCell>
-            </TableRow>
-            <TableRow>
-              <TableCell />
-              <TableCell align="left">Tag</TableCell>
-              <TableCell align="left">Name</TableCell>
-              <TableCell align="left">Quantity</TableCell>
-              <TableCell align="left">Price</TableCell>
-            </TableRow>
-          </TableHead>
-          <TableBody>
-            {rows.map((row) => (
-              <Row key={row.name} row={row} />
-            ))}
-          </TableBody>
-        </Table>
-      </TableContainer>
-    </>
+                </TableCell>
+              </TableRow>
+              <TableRow>
+                <TableCell />
+                <TableCell align="left">Tag</TableCell>
+                <TableCell align="left">Name</TableCell>
+                <TableCell align="left">Quantity</TableCell>
+                <TableCell align="left">Price</TableCell>
+              </TableRow>
+            </TableHead>
+            <TableBody>
+              {rows.map((row) => (
+                <Row key={row.name} row={row} />
+              ))}
+            </TableBody>
+          </Table>
+        </TableContainer>
+      </Grid>
+
+      <Grid item md={2}>
+        <Drawer
+          sx={{
+            width: drawerWidth,
+            flexShrink: 0,
+            "& .MuiDrawer-paper": {
+              width: drawerWidth,
+              boxSizing: "border-box",
+            },
+          }}
+          variant="permanent"
+          anchor="right"
+        >
+          Comming soon
+        </Drawer>
+      </Grid>
+    </Grid>
   );
 };
 
