@@ -38,30 +38,12 @@ function createData(
   name: string,
   quantity: number,
   price: number
-  // carbs: number
-  // protein: number
-  // price: number
 ) {
   return {
     tag,
     name,
     quantity,
     price,
-    // carbs,
-    // protein,
-    // price,
-    // history: [
-    //   {
-    //     date: "2020-01-05",
-    //     customerId: "11091700",
-    //     amount: 3,
-    //   },
-    //   {
-    //     date: "2020-01-02",
-    //     customerId: "Anonymous",
-    //     amount: 1,
-    //   },
-    // ],
   };
 }
 
@@ -72,15 +54,20 @@ const Row = (props: { row: ReturnType<typeof createData> }) => {
   return (
     <>
       <TableRow sx={{ "& > *": { borderBottom: "unset" } }}>
-        {/* <TableCell>Hello</TableCell> */}
         <TableCell>
-          <IconButton
-            aria-label="expand row"
-            size="small"
+          <Avatar
             onClick={() => setOpen(!open)}
-          >
-            {open ? <KeyboardArrowUpIcon /> : <KeyboardArrowDownIcon />}
-          </IconButton>
+            alt=""
+            src="https://cdn.pixabay.com/photo/2016/03/31/19/58/avatar-1295430_1280.png"
+            sx={{
+              p: 0.5,
+              borderRadius: "5px",
+              border: 1,
+              borderColor: "##212F3C",
+              // mr: 2,
+              bgcolor: "#fff",
+            }}
+          />
         </TableCell>
         <TableCell align="left">{row.tag}</TableCell>
         <TableCell align="left">{row.name}</TableCell>
@@ -89,7 +76,6 @@ const Row = (props: { row: ReturnType<typeof createData> }) => {
       </TableRow>
       <TableRow sx={{ my: 12 }}>
         <TableCell
-          // className={`shadow-md`}
           style={{ paddingBottom: 0, paddingTop: 0, width: "100%" }}
           colSpan={6}
         >
@@ -291,16 +277,6 @@ const Row = (props: { row: ReturnType<typeof createData> }) => {
                               readOnly: true,
                             }}
                           />
-                          {/* <TextField
-                            sx={{}}
-                            label="Stocks:"
-                            type="text"
-                            defaultValue="Hello World"
-                            variant="standard"
-                            InputProps={{
-                              readOnly: true,
-                            }}
-                          /> */}
                         </Box>
                       </Box>
                     </Box>
@@ -338,7 +314,6 @@ const rows = [
   createData("#002", "Ice cream sandwich", 237, 9.0),
   createData("#003", "Eclair", 262, 16.0),
   createData("#004", "Cupcake", 305, 3.7),
-  // createData("002", "Gingerbread", 356, 16.0),
 ];
 
 const drawerWidth = 210;
@@ -450,12 +425,13 @@ const Catgories = (props: Props) => {
             "& .MuiDrawer-paper": {
               width: drawerWidth,
               boxSizing: "border-box",
+              zIndex: 1,
             },
           }}
           variant="permanent"
           anchor="right"
         >
-          Comming soon
+          <Box sx={{ mt: "70%" }}>Comming soon</Box>
         </Drawer>
       </Grid>
     </Grid>
