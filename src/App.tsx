@@ -17,7 +17,6 @@ function App() {
     } else {
       localStorage.setItem('app_theme', theme);
     }
-
     return theme;
   };
 

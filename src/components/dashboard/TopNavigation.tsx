@@ -1,43 +1,49 @@
-import React, { Dispatch, SetStateAction, useEffect, useState } from "react";
-import { BiSearchAlt } from "react-icons/bi";
-import { BsFillMoonFill, BsFillSunFill } from "react-icons/bs";
-import { IoNotificationsSharp, IoSettings } from "react-icons/io5";
-import { RxCaretDown } from "react-icons/rx";
-import styles from "../../styles/Home.module.css";
+import { Dispatch, SetStateAction, useEffect, useState } from 'react';
+import { BiSearchAlt } from 'react-icons/bi';
+import { BsFillMoonFill, BsFillSunFill } from 'react-icons/bs';
+import { IoNotificationsSharp } from 'react-icons/io5';
+import { RxCaretDown } from 'react-icons/rx';
+import styles from '../../styles/Home.module.css';
+
+type ThemeProps = 'light' | 'dark';
 
 type TopNavProps = {
   setVisibleRight: Dispatch<SetStateAction<boolean>>;
+  setMode: (value: ThemeProps) => void;
 };
 
-const TopNavigation = ({ setVisibleRight }: TopNavProps) => {
+const TopNavigation = ({ setVisibleRight, setMode }: TopNavProps) => {
   const [theme, setTheme] = useState<string | null>();
   const element = document.documentElement;
-  const root = document.querySelector(":root");
+  const root = document.querySelector(':root');
 
   const handleThemeChange = () => {
-    if (theme === "light") {
-      setTheme("dark");
-      root?.setAttribute("color-scheme", "dark");
+    if (theme === 'light') {
+      setTheme('dark');
+      setMode('dark');
+      root?.setAttribute('color-scheme', 'dark');
     } else {
-      setTheme("light");
-      root?.setAttribute("color-scheme", "light");
+      setTheme('light');
+      setMode('light');
+      root?.setAttribute('color-scheme', 'light');
     }
   };
 
   useEffect(() => {
-    const theme = localStorage.getItem("app_theme");
+    const theme = localStorage.getItem('app_theme');
     setTheme(theme!);
+    setMode(theme!);
   }, []);
 
   useEffect(() => {
     switch (theme) {
-      case "dark":
-        element.classList.add("dark");
-        localStorage.setItem("app_theme", "dark");
+      case 'dark':
+        element.classList.add('dark');
+        localStorage.setItem('app_theme', 'dark');
         break;
-      case "light":
-        element.classList.remove("dark");
-        localStorage.setItem("app_theme", "light");
+      case 'light':
+        element.classList.remove('dark');
+        localStorage.setItem('app_theme', 'light');
         break;
       default:
         break;
@@ -46,7 +52,7 @@ const TopNavigation = ({ setVisibleRight }: TopNavProps) => {
 
   return (
     <div
-      className={`${styles["top-nav"]} bg-white dark:bg-slate-900 dark:border-none relative z-10`}
+      className={`${styles['top-nav']} bg-white dark:bg-slate-900 dark:border-none relative z-10`}
     >
       <div>
         <h1 className="font-bold text-xl">Good Morning Mafia👋</h1>
@@ -74,7 +80,7 @@ const TopNavigation = ({ setVisibleRight }: TopNavProps) => {
             onClick={handleThemeChange}
             className="p-3 rounded-full text-gray-600 bg-white hover:bg-slate-400 hover:text-white transition-all duration-300 ease-in-out text-md dark:bg-slate-900 dark:hover:bg-white dark:text-gray-300 dark:hover:text-slate-900"
           >
-            {theme === "light" ? (
+            {theme === 'light' ? (
               <span>
                 <BsFillMoonFill />
               </span>
