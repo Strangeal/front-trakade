@@ -11,6 +11,7 @@
   --sidebar-bg-dark: #192232;
   --table-row-bg-dark: transparent;
   --text-dark: #fff;
+  --form-text-dark: #c9c9c9;
 }
 
 [color-scheme='dark'] {
@@ -18,6 +19,7 @@
   --sidebar-bg: var(--sidebar-bg-dark);
   --table-row-bg: var(--table-row-bg-dark);
   --text: var(--text-dark);
+  --text-form: var(--form-text-dark);
 }
 
 [color-scheme='light'] {
@@ -25,4 +27,5 @@
   --sidebar-bg: var(--sidebar-bg-light);
   --table-row-bg: var(--table-row-bg-light);
   --text: var(--text-light);
+  --text-form: var(--text-light);
 }

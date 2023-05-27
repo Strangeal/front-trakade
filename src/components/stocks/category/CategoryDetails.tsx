@@ -79,6 +79,7 @@ const CategoryDetails = () => {
           <TextField
             className="title_input"
             sx={{
+              ".MuiInputBase-input": { fontSize: "2rem" },
               "& .MuiInputBase-root.Mui-disabled": {
                 "& > fieldset": {
                   display: "none",

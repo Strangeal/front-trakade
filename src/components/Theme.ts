@@ -1,8 +1,18 @@
-import { createTheme } from "@mui/material/styles";
+import { createTheme } from '@mui/material/styles';
+
+enum ThemeEnum {
+  DARK = 'dark',
+  LIGHT = 'light',
+}
+
+let theme_from_storage = localStorage.getItem('app_theme');
+
+let mode = theme_from_storage === 'dark' ? ThemeEnum.DARK : ThemeEnum.LIGHT;
+
 const theme = createTheme({
   palette: {
     primary: {
-      main: "#FF5733",
+      main: '#FF5733',
     },
   },
   breakpoints: {

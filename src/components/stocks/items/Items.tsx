@@ -1,6 +1,8 @@
 import AddIcon from '@mui/icons-material/Add';
 import { Button } from '@mui/material';
 
+import { useState } from 'react';
+import AddItemDialog from '../../dialog/AddItemDialog';
 import SearchBar from '../../searchbar/SearchBar';
 import ItemCard from './ItemCard';
 
@@ -40,6 +42,8 @@ const items = [
 ];
 
 const Items = () => {
+  const [visible, setVisible] = useState<boolean>(false);
+
   return (
     <section>
       <div className="items-header flex items-center gap-x-3">
@@ -51,6 +55,7 @@ const Items = () => {
             color="info"
             className="!min-w-0 !p-1"
             title="Add Item"
+            onClick={() => setVisible(true)}
           >
             <AddIcon />
           </Button>
@@ -64,10 +69,12 @@ const Items = () => {
         <div className="all-items my-7 grid grid-cols-3 gap-8">
           {items &&
             items.map((item) => {
-              return <ItemCard item={item} />;
+              return <ItemCard key={item.name} item={item} />;
             })}
         </div>
       </section>
+
+      <AddItemDialog visible={visible} setVisible={setVisible} />
     </section>
   );
 };

@@ -112,31 +112,41 @@ div.p-datatable-header {
 .css-3jq30o-MuiInputBase-root-MuiInput-root:after,
 .css-3jq30o-MuiInputBase-root-MuiInput-root:before {
   display: none !important;
-  
-  } */
+} */
 
-  /* new */
+/* new */
 
-/* .css-1ex1afd-MuiTableCell-root{
-  color: #82929D !important;
+/* .css-1ex1afd-MuiTableCell-root {
+  color: #82929d !important;
 }
 
-  .css-1gzkxga-MuiSelect-select-MuiInputBase-input-MuiFilledInput-input {
-    padding-top: 15px !important;
+.css-1gzkxga-MuiSelect-select-MuiInputBase-input-MuiFilledInput-input {
+  padding-top: 15px !important;
   } */
 
   /* Category */
 
-  .title_input .css-1rpspyd-MuiInputBase-root-MuiOutlinedInput-root {
-    font-size: 2rem !important;
-  }
   .title_input .css-nxo287-MuiInputBase-input-MuiOutlinedInput-input {
     padding: 0 14px !important;
-  }
+}
 
-  .title_input .css-1rpspyd-MuiInputBase-root-MuiOutlinedInput-root.Mui-focused.MuiOutlinedInput-notchedOutline fieldset{
-    border-color: #04a7f9 !important;
-  }
-  /* .title_input.MuiInputBase-root-MuiOutlinedInput-root.Mui-focused.MuiOutlinedInput-notchedOutline {
-    border-color: #04a7f9 !important;
-  } */
+div.p-dialog-mask {
+  background-color: rgba(121, 121, 121, 0.4) !important;
+  -webkit-backdrop-filter: blur(3px);
+  backdrop-filter: blur(3px);
+}
+
+div.p-dialog-header,
+div.p-dialog-content {
+  background: var(--sidebar-bg) !important;
+  color: var(--text-form) !important;
+}
+
+.css-1t8l2tu-MuiInputBase-input-MuiOutlinedInput-input {
+  border-color: var(--text) !important;
+  color: var(--text-form) !important;
+}
+
+label.css-xirb9b-MuiFormLabel-root-MuiInputLabel-root {
+  color: var(--text-form) !important;
+}
