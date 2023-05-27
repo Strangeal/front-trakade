@@ -10,7 +10,7 @@ import Register from "./pages/auth/Register";
 import Dashboard from "./pages/dashboard/Dashboard";
 import Home from "./pages/dashboard/Home";
 import store from "./redux/store";
-import Categories from "./components/stocks/category/Catgories";
+import Categories from "./components/stocks/category/Categories";
 import CategoryDetails from "./components/stocks/category/CategoryDetails";
 
 const router = createBrowserRouter([
