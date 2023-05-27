@@ -1,0 +1,24 @@
+.swiper {
+  width: 280px;
+  height: 360px;
+}
+
+.swiper-slide {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 18px;
+  font-size: 22px;
+  font-weight: bold;
+  color: #fff;
+}
+
+
+.btn_large {
+  @apply py-3.5 px-16 mr-5 rounded-lg transition-all;
+}
+
+.icon_large {
+  @apply text-4xl border p-1.5 h-fit rounded;
+}
+
