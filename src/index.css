@@ -90,7 +90,7 @@ div.p-datatable-header {
   color: var(--text) !important;
 }
 
-.Mui-selected {
+/* .Mui-selected {
   background-color: #def1e7 !important;
 }
 
@@ -113,14 +113,30 @@ div.p-datatable-header {
 .css-3jq30o-MuiInputBase-root-MuiInput-root:before {
   display: none !important;
   
-  }
+  } */
 
   /* new */
 
-.css-1ex1afd-MuiTableCell-root{
+/* .css-1ex1afd-MuiTableCell-root{
   color: #82929D !important;
 }
 
   .css-1gzkxga-MuiSelect-select-MuiInputBase-input-MuiFilledInput-input {
     padding-top: 15px !important;
+  } */
+
+  /* Category */
+
+  .title_input .css-1rpspyd-MuiInputBase-root-MuiOutlinedInput-root {
+    font-size: 2rem !important;
   }
+  .title_input .css-nxo287-MuiInputBase-input-MuiOutlinedInput-input {
+    padding: 0 14px !important;
+  }
+
+  .title_input .css-1rpspyd-MuiInputBase-root-MuiOutlinedInput-root.Mui-focused.MuiOutlinedInput-notchedOutline fieldset{
+    border-color: #04a7f9 !important;
+  }
+  /* .title_input.MuiInputBase-root-MuiOutlinedInput-root.Mui-focused.MuiOutlinedInput-notchedOutline {
+    border-color: #04a7f9 !important;
+  } */
