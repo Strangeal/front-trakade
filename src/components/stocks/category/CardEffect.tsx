@@ -22,21 +22,21 @@ const CardEffect = (props: Props) => {
       >
         <SwiperSlide className="bg-[#14c8ab] rounded-lg">
           <img
-            className="h-full"
+            className="h-72"
             src="https://res.cloudinary.com/dskl0qde4/image/upload/v1677227464/samples/ecommerce/shoes.png"
             alt=""
           />
         </SwiperSlide>
         <SwiperSlide className="bg-blue-700 rounded-lg">
           <img
-            className="h-full"
+            className="h-72"
             src="https://res.cloudinary.com/dskl0qde4/image/upload/v1677227469/samples/ecommerce/leather-bag-gray.jpg"
             alt=""
           />
         </SwiperSlide>
         <SwiperSlide className="bg-red-600 rounded-lg">
           <img
-            className="h-full"
+            className="h-72"
             src="https://res.cloudinary.com/dskl0qde4/image/upload/v1677227459/samples/ecommerce/analog-classic.jpg"
             alt=""
           />
