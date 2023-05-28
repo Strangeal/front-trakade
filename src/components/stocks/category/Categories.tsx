@@ -2,8 +2,7 @@ import { Button } from "@mui/material";
 import AddIcon from "@mui/icons-material/Add";
 import SearchBar from "../../searchbar/SearchBar";
 import CategoryCard from "./CategoryCard";
-import { Link } from "react-router-dom";
-import CategoryDialog from "./CategoryDialog";
+import CategoryDialog from "../../dialog/AddCategoryDialog";
 import { useState } from "react";
 
 type Props = {};
@@ -44,6 +43,8 @@ const categoryList = [
 ];
 
 const Categories = (props: Props) => {
+  const [visible, setVisible] = useState<boolean>(false);
+
   return (
     <>
       <div className="items-header flex items-center gap-x-3">
@@ -55,6 +56,7 @@ const Categories = (props: Props) => {
             color="info"
             className="!min-w-0 !p-1"
             title="Add Item"
+            onClick={() => setVisible(true)}
           >
             <AddIcon />
           </Button>
@@ -69,6 +71,7 @@ const Categories = (props: Props) => {
           categoryList.map((list) => {
             return <CategoryCard list={list} />;
           })}
+        <CategoryDialog visible={visible} setVisible={setVisible} />
       </div>
     </>
   );
