@@ -23,6 +23,8 @@ import {
 } from "react-icons/bs";
 import CardEffect from "./CardEffect";
 import styles from "../../../styles/CategoryDetails.module.css";
+import ImageUpload from "../../Upload/ImageUpload";
+import ImageUploadSmall from "../../Upload/ImageUploadSmall";
 
 type CategoryFormProps = {
   quantity: number;
@@ -86,12 +88,6 @@ const CategoryDetails = () => {
                 },
                 "& .MuiInputBase-input.Mui-disabled": {
                   WebkitTextFillColor: "#000000",
-                },
-                "&.Mui-focused": {
-                  border: "2px solid red",
-                  "& .MuiOutlinedInput-notchedOutline": {
-                    border: "none",
-                  },
                 },
               },
             }}
@@ -286,11 +282,8 @@ const CategoryDetails = () => {
 
         <section>
           <CardEffect />
-          <div className="flex justify-center my-4 relative cursor-pointer">
-            <BsImages className="text-5xl border-2 border-gray-500 rounded w-28 p-4 bg-gray-400 opacity-50" />
-            <div className="absolute bottom-0">
-              <SiAddthis className="text-black w-28 text-5xl p-4 rounded opacity-0 hover:opacity-100 transition-all" />
-            </div>
+          <div>
+            <ImageUploadSmall />
           </div>
         </section>
       </div>
