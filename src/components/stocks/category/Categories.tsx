@@ -1,42 +1,46 @@
-import { Button } from "@mui/material";
-import AddIcon from "@mui/icons-material/Add";
-import SearchBar from "../../searchbar/SearchBar";
-import CategoryCard from "./CategoryCard";
-import CategoryDialog from "../../dialog/AddCategoryDialog";
-import { useState } from "react";
+import AddIcon from '@mui/icons-material/Add';
+import { Button } from '@mui/material';
+import { useState } from 'react';
+import CategoryDialog from '../../dialog/AddCategoryDialog';
+import SearchBar from '../../searchbar/SearchBar';
+import CategoryCard from './CategoryCard';
 
 type Props = {};
 
-const categoryList = [
+export const categoryList = [
   {
+    id: 1,
     image:
-      "https://res.cloudinary.com/dskl0qde4/image/upload/v1677227464/samples/ecommerce/shoes.png",
-    name: "Reebok Fashions",
-    category: "Footwear",
+      'https://res.cloudinary.com/dskl0qde4/image/upload/v1677227464/samples/ecommerce/shoes.png',
+    name: 'Reebok Fashions',
+    category: 'Footwear',
     units: 10,
     amount: 500,
   },
   {
+    id: 2,
     image:
-      "https://res.cloudinary.com/dskl0qde4/image/upload/v1677227469/samples/ecommerce/leather-bag-gray.jpg",
-    name: "Leather Bag",
-    category: "Bags",
+      'https://res.cloudinary.com/dskl0qde4/image/upload/v1677227469/samples/ecommerce/leather-bag-gray.jpg',
+    name: 'Leather Bag',
+    category: 'Bags',
     units: 20,
     amount: 1000,
   },
   {
+    id: 3,
     image:
-      "https://res.cloudinary.com/dskl0qde4/image/upload/v1677227466/samples/animals/three-dogs.jpg",
-    name: "BullDogs",
-    category: "Dogs",
+      'https://res.cloudinary.com/dskl0qde4/image/upload/v1677227466/samples/animals/three-dogs.jpg',
+    name: 'BullDogs',
+    category: 'Dogs',
     units: 50,
     amount: 800,
   },
   {
+    id: 4,
     image:
-      "https://res.cloudinary.com/dskl0qde4/image/upload/v1677227459/samples/ecommerce/analog-classic.jpg",
-    name: "Rollex",
-    category: "Watches",
+      'https://res.cloudinary.com/dskl0qde4/image/upload/v1677227459/samples/ecommerce/analog-classic.jpg',
+    name: 'Rollex',
+    category: 'Watches',
     units: 15,
     amount: 750,
   },

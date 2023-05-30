@@ -1,13 +1,15 @@
-import React, { useState } from "react";
-import { BsTags } from "react-icons/bs";
-import { MdMoreVert } from "react-icons/md";
-import { TbEdit } from "react-icons/tb";
-import CategoryDialog from "../../dialog/AddCategoryDialog";
-import Categories from "./Categories";
-import ViewCategoryDialog from "../../dialog/ViewCategoryDialog";
+import React, { useState } from 'react';
+import { BsTags } from 'react-icons/bs';
+import { MdMoreVert } from 'react-icons/md';
+import { TbEdit } from 'react-icons/tb';
+import { useNavigate } from 'react-router-dom';
+import CategoryDialog from '../../dialog/AddCategoryDialog';
+import ViewCategoryDialog from '../../dialog/ViewCategoryDialog';
+import Categories from './Categories';
 
 type CategoryProps = {
   list: {
+    id: number;
     name: string;
     image: string;
     category: string;
@@ -18,6 +20,7 @@ type CategoryProps = {
 
 const CategoryCard = ({ list }: CategoryProps) => {
   const [visible, setVisible] = useState<boolean>(false);
+  const navigate = useNavigate();
   return (
     <div className="bg-white p-3 border rounded-lg hover:shadow-lg transition-all">
       <div className="grid place-items-center item-img bg-slate-600 overflow-hidden rounded-md relative">
@@ -29,7 +32,7 @@ const CategoryCard = ({ list }: CategoryProps) => {
       <div>
         <div className="flex items-center justify-between mt-3">
           <h4
-            onClick={() => setVisible(true)}
+            onClick={() => navigate(`/dashboard/categories/${list.id}`)}
             className="font-bold text-slate-800 text-lg cursor-pointer"
           >
             {list.name}

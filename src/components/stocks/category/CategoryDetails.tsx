@@ -8,23 +8,25 @@ import {
   Select,
   SelectChangeEvent,
   TextField,
-} from "@mui/material";
-import React, { useState } from "react";
-import { useForm } from "react-hook-form";
-import { BiPencil } from "react-icons/bi";
-import { VscBellDot } from "react-icons/vsc";
-import { SiAddthis } from "react-icons/si";
-import { MdMoreHoriz } from "react-icons/md";
+} from '@mui/material';
+import React, { useState } from 'react';
+import { useForm } from 'react-hook-form';
+import { BiPencil } from 'react-icons/bi';
 import {
   BsFillQuestionCircleFill,
   BsFolderSymlink,
   BsImages,
   BsQrCodeScan,
-} from "react-icons/bs";
-import CardEffect from "./CardEffect";
-import styles from "../../../styles/CategoryDetails.module.css";
-import ImageUpload from "../../Upload/ImageUpload";
-import ImageUploadSmall from "../../Upload/ImageUploadSmall";
+} from 'react-icons/bs';
+import { MdMoreHoriz } from 'react-icons/md';
+import { SiAddthis } from 'react-icons/si';
+import { VscBellDot } from 'react-icons/vsc';
+import { useParams } from 'react-router-dom';
+import styles from '../../../styles/CategoryDetails.module.css';
+import ImageUpload from '../../Upload/ImageUpload';
+import ImageUploadSmall from '../../Upload/ImageUploadSmall';
+import CardEffect from './CardEffect';
+import { categoryList } from './Categories';
 
 type CategoryFormProps = {
   quantity: number;
@@ -37,30 +39,36 @@ type CategoryFormProps = {
 };
 
 const names = [
-  "Oliver Hansen",
-  "Van Henry",
-  "April Tucker",
-  "Ralph Hubbard",
-  "Omar Alexander",
-  "Carlos Abbott",
-  "Miriam Wagner",
-  "Bradley Wilkerson",
-  "Virginia Andrews",
-  "Kelly Snyder",
+  'Oliver Hansen',
+  'Van Henry',
+  'April Tucker',
+  'Ralph Hubbard',
+  'Omar Alexander',
+  'Carlos Abbott',
+  'Miriam Wagner',
+  'Bradley Wilkerson',
+  'Virginia Andrews',
+  'Kelly Snyder',
 ];
 
 const CategoryDetails = () => {
   const [disableButton, setDisableButton] = useState(true);
   const [selectTag, setSelectTag] = useState<string[]>([]);
+  const { catId } = useParams();
+
+  const category = categoryList.find((c) => String(c.id) === String(catId));
+
+  console.log(category);
+
   const form = useForm<CategoryFormProps>({
     defaultValues: {
       quantity: 10,
       min_level: 5,
       price: 35,
       total_value: 3500,
-      tags: "Bags",
-      notes: "",
-      title: "Category title",
+      tags: 'Bags',
+      notes: '',
+      title: 'Category title',
     },
   });
   const {
@@ -72,7 +80,7 @@ const CategoryDetails = () => {
     const {
       target: { value },
     } = event;
-    setSelectTag(typeof value === "string" ? value.split(", ") : value);
+    setSelectTag(typeof value === 'string' ? value.split(', ') : value);
   };
   return (
     <>
@@ -81,13 +89,13 @@ const CategoryDetails = () => {
           <TextField
             className="title_input"
             sx={{
-              ".MuiInputBase-input": { fontSize: "2rem" },
-              "& .MuiInputBase-root.Mui-disabled": {
-                "& > fieldset": {
-                  display: "none",
+              '.MuiInputBase-input': { fontSize: '2rem' },
+              '& .MuiInputBase-root.Mui-disabled': {
+                '& > fieldset': {
+                  display: 'none',
                 },
-                "& .MuiInputBase-input.Mui-disabled": {
-                  WebkitTextFillColor: "#000000",
+                '& .MuiInputBase-input.Mui-disabled': {
+                  WebkitTextFillColor: '#000000',
                 },
               },
             }}
@@ -95,7 +103,7 @@ const CategoryDetails = () => {
             variant="outlined"
             fullWidth
             disabled={disableButton}
-            {...register("title")}
+            {...register('title')}
             InputProps={{
               endAdornment: (
                 <InputAdornment
@@ -141,8 +149,8 @@ const CategoryDetails = () => {
                 label="Quantity *"
                 variant="outlined"
                 fullWidth
-                {...register("quantity", {
-                  required: "Invalid input",
+                {...register('quantity', {
+                  required: 'Invalid input',
                 })}
                 error={!!errors.quantity}
                 helperText={errors.quantity?.message}
@@ -155,7 +163,7 @@ const CategoryDetails = () => {
                   variant="outlined"
                   disabled
                   fullWidth
-                  {...register("min_level")}
+                  {...register('min_level')}
                   InputProps={{
                     endAdornment: (
                       <InputAdornment position="end">
@@ -174,8 +182,8 @@ const CategoryDetails = () => {
                 label="Price"
                 variant="outlined"
                 fullWidth
-                {...register("price", {
-                  required: "Invalid input",
+                {...register('price', {
+                  required: 'Invalid input',
                 })}
                 error={!!errors.min_level}
                 helperText={errors.quantity?.message}
@@ -194,8 +202,8 @@ const CategoryDetails = () => {
                 variant="outlined"
                 disabled
                 fullWidth
-                {...register("total_value", {
-                  required: "Invalid input",
+                {...register('total_value', {
+                  required: 'Invalid input',
                 })}
                 error={!!errors.total_value}
                 helperText={errors.quantity?.message}
@@ -213,10 +221,10 @@ const CategoryDetails = () => {
               <Select
                 multiple
                 value={selectTag}
-                {...register("tags")}
+                {...register('tags')}
                 onChange={handleChange}
                 renderValue={(selected) => (
-                  <Box sx={{ display: "flex", flexWrap: "wrap", gap: 0.5 }}>
+                  <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 0.5 }}>
                     {selected.map((value) => (
                       <Chip key={value} label={value} />
                     ))}
@@ -234,7 +242,7 @@ const CategoryDetails = () => {
             <TextField
               sx={{
                 mb: 2,
-                color: "#ddd",
+                color: '#ddd',
               }}
               type="text"
               size="small"
@@ -243,8 +251,8 @@ const CategoryDetails = () => {
               fullWidth
               multiline
               rows={2}
-              {...register("notes", {
-                required: "notes must be valid",
+              {...register('notes', {
+                required: 'notes must be valid',
               })}
               helperText={errors.notes?.message}
             />
@@ -255,7 +263,7 @@ const CategoryDetails = () => {
               <div className="">
                 <h5 className="text-base font-semibold">Code Validation...</h5>
                 <p className="mt-6 text-xs text-gray-500">
-                  Created via{" "}
+                  Created via{' '}
                   <span className="font-bold text-[#14c8ab] text-base">
                     Trakade
                   </span>
