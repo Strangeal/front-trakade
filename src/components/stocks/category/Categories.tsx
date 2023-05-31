@@ -1,9 +1,9 @@
-import AddIcon from '@mui/icons-material/Add';
-import { Button } from '@mui/material';
-import { useState } from 'react';
-import CategoryDialog from '../../dialog/AddCategoryDialog';
-import SearchBar from '../../searchbar/SearchBar';
-import CategoryCard from './CategoryCard';
+import AddIcon from "@mui/icons-material/Add";
+import { Button } from "@mui/material";
+import { useState } from "react";
+import CategoryDialog from "../../dialog/AddCategoryDialog";
+import SearchBar from "../../searchbar/SearchBar";
+import CategoryCard from "./CategoryCard";
 
 type Props = {};
 
@@ -11,38 +11,46 @@ export const categoryList = [
   {
     id: 1,
     image:
-      'https://res.cloudinary.com/dskl0qde4/image/upload/v1677227464/samples/ecommerce/shoes.png',
-    name: 'Reebok Fashions',
-    category: 'Footwear',
-    units: 10,
-    amount: 500,
+      "https://res.cloudinary.com/dskl0qde4/image/upload/v1677227464/samples/ecommerce/shoes.png",
+    name: "Reebok Fashions",
+    category: "Footwear",
+    price: 35,
+    quantity: 100,
+    min_level: 10,
+    total_value: 500,
   },
   {
     id: 2,
     image:
-      'https://res.cloudinary.com/dskl0qde4/image/upload/v1677227469/samples/ecommerce/leather-bag-gray.jpg',
-    name: 'Leather Bag',
-    category: 'Bags',
-    units: 20,
-    amount: 1000,
+      "https://res.cloudinary.com/dskl0qde4/image/upload/v1677227469/samples/ecommerce/leather-bag-gray.jpg",
+    name: "Leather Bag",
+    category: "Bags",
+    price: 45,
+    quantity: 60,
+    min_level: 8,
+    total_value: 230,
   },
   {
     id: 3,
     image:
-      'https://res.cloudinary.com/dskl0qde4/image/upload/v1677227466/samples/animals/three-dogs.jpg',
-    name: 'BullDogs',
-    category: 'Dogs',
-    units: 50,
-    amount: 800,
+      "https://res.cloudinary.com/dskl0qde4/image/upload/v1677227466/samples/animals/three-dogs.jpg",
+    name: "BullDogs",
+    category: "Dogs",
+    price: 50,
+    quantity: 460,
+    min_level: 10,
+    total_value: 530,
   },
   {
     id: 4,
     image:
-      'https://res.cloudinary.com/dskl0qde4/image/upload/v1677227459/samples/ecommerce/analog-classic.jpg',
-    name: 'Rollex',
-    category: 'Watches',
-    units: 15,
-    amount: 750,
+      "https://res.cloudinary.com/dskl0qde4/image/upload/v1677227459/samples/ecommerce/analog-classic.jpg",
+    name: "Rollex",
+    category: "Watches",
+    price: 55,
+    quantity: 160,
+    min_level: 15,
+    total_value: 7500,
   },
 ];
 

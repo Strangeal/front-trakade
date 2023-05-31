@@ -1,20 +1,19 @@
-import React, { useState } from 'react';
-import { BsTags } from 'react-icons/bs';
-import { MdMoreVert } from 'react-icons/md';
-import { TbEdit } from 'react-icons/tb';
-import { useNavigate } from 'react-router-dom';
-import CategoryDialog from '../../dialog/AddCategoryDialog';
-import ViewCategoryDialog from '../../dialog/ViewCategoryDialog';
-import Categories from './Categories';
+import React, { useState } from "react";
+import { BsTags } from "react-icons/bs";
+import { MdMoreVert } from "react-icons/md";
+import { TbEdit } from "react-icons/tb";
+import { useNavigate } from "react-router-dom";
 
 type CategoryProps = {
   list: {
     id: number;
-    name: string;
     image: string;
+    name: string;
     category: string;
-    units: number;
-    amount: number;
+    price: number;
+    quantity: number;
+    min_level: number;
+    total_value: number;
   };
 };
 
@@ -41,16 +40,18 @@ const CategoryCard = ({ list }: CategoryProps) => {
         </div>
 
         <p className="flex items-center gap-1 my-3 text-sm">
-          <span className="border-r-2 pr-2 font-bold">{list.units} units</span>
-          <span className="text-slate-500 text-xs">$ {list.amount}.00</span>
+          <span className="border-r-2 pr-2 font-bold">
+            {list.quantity} units
+          </span>
+          <span className="text-slate-500 text-xs">
+            $ {list.total_value}.00
+          </span>
         </p>
         <p className="bg-slate-200 text-xs flex items-center py-1 px-2 w-fit rounded-full">
           <BsTags className="mr-1" />
           <span className="">{list.category}</span>
         </p>
       </div>
-      {/* <CategoryDialog visible={visible} setVisible={setVisible} /> */}
-      <ViewCategoryDialog visible={visible} setVisible={setVisible} />
     </div>
   );
 };
